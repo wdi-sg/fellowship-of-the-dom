@@ -49,7 +49,7 @@ makeMiddleEarth();
 
 function makeHobbits() {
   var theShire = $('article').first()
-  var $hobbitList = $('<ul>')
+  var $hobbitList = $('<ul>',{id: 'the-Hobbits'})
 
 
 
@@ -133,9 +133,10 @@ beautifulStranger()
 // Part 6
 
 function leaveTheShire() {
-  var assHobbits = $('section').find('article:nth-child(1) ul')
+  // var assHobbits = $('section').find('article:nth-child(1) ul')
   var rivendell = $('section').find('article:nth-child(2)')
-  rivendell.append(assHobbits)
+  rivendell.append($('#the-Hobbits'))
+
 
   // assemble the hobbits and move them to Rivendell
 }
@@ -150,7 +151,8 @@ function forgeTheFellowShip() {
   var $theFellowship = $('<div>',{id: "the-fellowship"})
   $( "li" ).each(function( index ) {
   $theFellowship.append($('li').text());
-  alert(`New member joined the Fellowship!`)
+//Where do we append the-fellowship
+  //alert(`New member joined the Fellowship!`)
   //alert(`New member:${('li').text()}to the Fellowship!`)
 });
   // create a new div called 'the-fellowship' within rivendell
@@ -164,46 +166,81 @@ forgeTheFellowShip()
 
 
 function theBalrog() {
-
+var $gandalf = $('section').find('article:nth-child(2) aside ul li:nth-child(1)')
+$gandalf.text("Gandalf the White")
+$gandalf.css({'background':'white', 'border': '3px solid grey'} )
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
 }
 
-
+theBalrog()
 // Part 9
 
 function hornOfGondor() {
-  // pop up an alert that the horn of gondor has been blown
-  // Boromir's been killed by the Uruk-hai!
-  // put a linethrough on boromir's name
-  // Remove Boromir from the Fellowship
+  //alert("The horn of Gondro has been blown!")
+   var $boromir = $('section').find('article:nth-child(2) aside ul li:nth-child(5)')
+   $boromir.css({ 'text-decoration': 'line-through'})
+   $boromir.remove()
+//   // pop up an alert that the horn of gondor has been blown
+//   // Boromir's been killed by the Uruk-hai!
+//   // put a linethrough on boromir's name
+//   // Remove Boromir from the Fellowship
 }
-
+//
+hornOfGondor()
 
 // Part 10
 
 function itsDangerousToGoAlone(){
+
+   var $mountDoom = $('<div>', {id: "mount-doom"})
+   var $Frodo = $('section').find('article:nth-child(2) #the-Hobbits li:nth-child(1)')
+   var $Sam =$('section').find('article:nth-child(2) #the-Hobbits li:nth-child(2)')
+//
+// //  $mountDoom.append($('<ul>'))
+
+  var mordor = $('section').find('article:nth-child(3)')
+  $mountDoom.append($Frodo, $Sam)
+  mordor.append($mountDoom)
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
 }
 
+itsDangerousToGoAlone ()
 
 // Part 11
 
 function weWantsIt() {
+  $gollum = $('<div>', {'id':'gollum'})
+  var mordor = $('section').find('article:nth-child(3)')
+  mordor.append($gollum)
+
+  $gollum.append($('#the-ring'))
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
 }
 
+weWantsIt()
 
 // Part 12
 
 function thereAndBackAgain() {
+  $('#gollum').remove()
+  $('#the-ring').remove()
+
+
+  $('#the-Hobbits').append($('#mount-doom li'))
+
+
+var theShire = $('article').first()
+theShire.append($('#the-Hobbits'))
+//$('#the-Hobbits').
+
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
-
+thereAndBackAgain()
 })
