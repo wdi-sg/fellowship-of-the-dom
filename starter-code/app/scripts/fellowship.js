@@ -239,9 +239,9 @@ weWantsIt()
     // remove all the baddies from the document
     // Move all the hobbits back to the shire
     $('#gollum').remove()
-    
 
-    var $middeleEarth =$('article:nth-child(1)').find('h1')
+
+    var $middeleEarth =$('article:nth-child(1)')
     //console.log($middeleEarth);
     var $hobbit = $('.hobbit')
     $middeleEarth.append($hobbit)
