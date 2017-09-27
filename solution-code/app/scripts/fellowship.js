@@ -1,3 +1,7 @@
+$(function () {
+  makeMiddleEarth();
+
+})
 console.log("Linked.");
 
 // Dramatis Personae

@@ -1,4 +1,5 @@
 console.log("Linked.");
+$(function() {
 
 // Dramatis Personae
 var hobbits = [
@@ -18,72 +19,107 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
-
+var $body = $('body')
 // Part 1
 
-
+var $middleEarth = $('<section id="middle-earth">')
+// $body.append($middleEarth)
+var $getMiddle = $('#middle-earth')
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
-  // add each land as an article tag
+  for(var i =0; i<lands.length; i++){
+      var $newLandArticle = $('<article >')
+      // var $header = $('<h1>')
+      // $newLandArticle.append($header)
+      $newLandArticle.text(lands[i])
+      $middleEarth.append($newLandArticle)
+  }
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
+  $body.append($middleEarth)
 }
-
 makeMiddleEarth();
-
 
 // Part 2
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
   // give each hobbit a class of hobbit
+  var $shireArticle = $('article').first()
+  var $newULList = $('<ul>')
+  for(var i = 0; i<hobbits.length; i++){
+  var $newListItem = $('<li class="hobbit">')
+  $newListItem.text(hobbits[i])
+  $newULList.append($newListItem)
+} $shireArticle.append($newULList)
+$getMiddle.append($shireArticle)
 }
-
+makeHobbits()
 
 // Part 3
 
 function keepItSecretKeepItSafe() {
-  // create a div with an id of 'the-ring'
-  // give the div a class of 'magic-imbued-jewelry'
-  // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  var $ringDiv = $('<div id="the-ring">')
+  $ringDiv.addClass("magic-imbued-jewelry")
+  $ringDiv.on('click', nazgulScreech )
+  var $frodo =$(' .hobbit').first()
   // add the ring as a child of Frodo
+  $frodo.append($ringDiv)
 }
+keepItSecretKeepItSafe()
 
+//.eq
 
 // Part 4
-
-
 function makeBuddies() {
   // create an aside tag
+var $aside = $('<aside>')
   // attach an unordered list of the 'buddies' in the aside
+  var $newULList = $('<ul>')
+  for(var i = 0; i<buddies.length; i++){
+  var $newListItem = $('<li>')
+  $newListItem.text(buddies[i])
+  $newULList.append($newListItem)
+}$aside.append($newULList)
   // insert your aside as a child element of rivendell
-}
+  var $riv = $('#middle-earth article:nth-child(2)')
+  $riv.append($aside)
+  //console.log($riv);
+}makeBuddies()
 
 
 // Part 5
-
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-}
+  var $strider = $('aside ul li:nth-child(4)')
+  $strider.text('Aragorn')
+}beautifulStranger()
 
 
 // Part 6
-
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
-}
+var $hobbits = $('article:nth-child(1) ul')
+//refactor to allow lis in an array to be moved, not ul.
+var $riv = $('#middle-earth article:nth-child(2) aside')
+//var $aside = $('<aside>')
+//$aside.append($hobbits)
+$riv.append($hobbits)
+}leaveTheShire()
 
-
-// Part 7
-
-
-function forgeTheFellowShip() {
-  // create a new div called 'the-fellowship' within rivendell
-  // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
-}
+//Part 7
+// function forgeTheFellowShip() {
+//   // create a new div called 'the-fellowship' within rivendell
+//   var $fellowDiv = $('<div id="the-fellowship">')
+//   $fellowDiv.text('The Fellowship')
+//   // add each hobbit and buddy one at a time to 'the-fellowship'
+//   $buds = $('#middle-earth article:nth-child(2) aside ul').first()
+//   $hobs = $('#middle-earth article:nth-child(2) aside ul').last()
+//   iterate across buds/hobs
+//   // after each character is added make an alert that they have joined your party
+// var $riv = $('#middle-earth article:nth-child(2)')
+// $riv.append($fellowDiv)
+// }
 
 
 // Part 8
@@ -130,3 +166,5 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+
+})
