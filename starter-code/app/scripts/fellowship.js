@@ -65,7 +65,7 @@ function makeHobbits() {
 }
 
 makeHobbits()
-
+var $rivendell = $('section').find('article:nth-child(2)')
 
 // Part 3
 
@@ -94,7 +94,7 @@ keepItSecretKeepItSafe()
 
 
 function makeBuddies() {
-  var rivendell = $('section').find('article:nth-child(2)')
+
   var aside = $('<aside>')
   // create an aside tag
   var $buddiesList = $('<ul>')
@@ -106,7 +106,7 @@ function makeBuddies() {
   $buddiesList.append(buddiesArr)
   aside.append($buddiesList)
 
-  rivendell.append(aside)
+  $rivendell.append(aside)
   //rivendell.append(aside)
 
   }
@@ -134,8 +134,8 @@ beautifulStranger()
 
 function leaveTheShire() {
   // var assHobbits = $('section').find('article:nth-child(1) ul')
-  var rivendell = $('section').find('article:nth-child(2)')
-  rivendell.append($('#the-Hobbits'))
+
+  $rivendell.append($('#the-Hobbits'))
 
 
   // assemble the hobbits and move them to Rivendell
