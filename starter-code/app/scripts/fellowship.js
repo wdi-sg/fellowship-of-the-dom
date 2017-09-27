@@ -76,7 +76,11 @@ function keepItSecretKeepItSafe() {
   var $theRing = $('<div id="the-ring">')
     $theRing.addClass('magic-imbued-jewelry')
     $theRing.on('click', nazgulScreech)
-    $('article ul :nth-child(1)').append($theRing)
+
+  var $frodo = $('.hobbit:nth-child(1)')
+  // var $frodo = $('.hobbit').eq(0)
+
+    $frodo.append($theRing)
 
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
@@ -94,7 +98,7 @@ function makeBuddies() {
   var $buddyList = $('<aside>')
 
   var buddyArr = buddies.map(function(buddy) {
-    var $buddyUl = $('<ul>').text(buddy)
+    var $buddyUl = $('<li>').text(buddy)
     return $buddyUl
   })
 
@@ -111,7 +115,7 @@ makeBuddies()
 
 
 function beautifulStranger() {
-  $('article aside ul:nth-child(4)').replaceWith('<ul>Aragorn</ul>')
+  $('article aside li:nth-child(4)').replaceWith('<li>Aragorn</li>')
   // $('<ul>Aragorn</ul>').replaceAll('article aside ul:nth-child(4)')
   // change the 'Strider' textnode to 'Aragorn'
 }
@@ -136,8 +140,14 @@ leaveTheShire()
 function forgeTheFellowShip() {
   var rivendell = $('article:nth-child(2)')
   var $theFellowship = $('<div id="the-fellowship">')
-  var $fellowshipMembers = $('article:nth-child(2) ul')
+  var $fellowshipMembers = $('article:nth-child(2) li')
   // $('#the-fellowship ul').first().removeClass('.hobbit')
+
+  // $.each($fellowshipMembers, function(key, val) {
+  //   $theFellowship.append($(val))
+  //   var characterName = $(val).text()
+  //   alert(characterName + ' has joined the fellowship!')
+  // })
 
   for(var i = 0, len = $fellowshipMembers.length; i < len; i++){
     $theFellowship.append($fellowshipMembers[i]);
@@ -155,9 +165,9 @@ forgeTheFellowShip()
 
 
 function theBalrog() {
-  $('#the-fellowship ul:nth-child(2)').replaceWith('<ul>Gandalf the White</ul>')
+  $('#the-fellowship li:nth-child(1)').replaceWith('<li>Gandalf the White</li>')
 
-  $('#the-fellowship ul:nth-child(2)').css({'background-color': 'white', 'border': 'grey 5px solid'})
+  $('#the-fellowship li:nth-child(1)').css({'background-color': 'white', 'border': 'grey 5px solid'})
 
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
@@ -171,9 +181,9 @@ theBalrog()
 function hornOfGondor() {
   // alert('the horn of gondor has been blown')
 
-  $('#the-fellowship ul:nth-child(5)').css({'text-decoration': 'line-through'})
+  $('#the-fellowship li:nth-child(5)').css({'text-decoration': 'line-through'})
 
-  $('#the-fellowship ul:nth-child(5)').remove()
+  $('#the-fellowship li:nth-child(5)').remove()
 
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
@@ -189,8 +199,8 @@ hornOfGondor()
 function itsDangerousToGoAlone(){
   var mordor = $('article:nth-child(3)')
   var $mountDoom = $('<div id="mount-doom">')
-  var frodo = $('#the-fellowship ul li:nth-child(1)')
-  var sam = $('#the-fellowship ul li:nth-child(2)')
+  var frodo = $('#the-fellowship li:nth-child(5)')
+  var sam = $('#the-fellowship  li:nth-child(6)')
 
   $mountDoom.append(frodo, sam)
 
@@ -226,6 +236,8 @@ function thereAndBackAgain() {
 
   $('#gollum').remove()
 
+  $('article:nth-child(3)').css({'background': 'none'})
+
   var theShire = $('article').first()
   var rivendell = $('article:nth-child(2)')
   var $theHobbits = $('<div id="the-hobbits">')
@@ -234,9 +246,11 @@ function thereAndBackAgain() {
 
   theShire.append($frodoAndSam)
 
-  var $hobbitMembers = $('#the-fellowship ul li')
+  var $hobbitMembers = $('#the-fellowship  li:nth-child(5)')
+  var $hobbitMember2 = $('#the-fellowship  li:nth-child(6)')
 
   theShire.append($hobbitMembers)
+  theShire.append($hobbitMember2)
 
 
   // remove Gollum and the Ring from the document
