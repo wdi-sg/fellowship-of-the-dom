@@ -109,7 +109,7 @@ function forgeTheFellowShip() {
   theFellowship.setAttribute('id', 'the-fellowship');
   for(var i = 0, len = fellowshipMembers.length; i < len; i++){
     theFellowship.appendChild(fellowshipMembers[i]);
-    // alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
+    alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
   }
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
