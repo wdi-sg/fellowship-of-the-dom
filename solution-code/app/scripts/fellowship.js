@@ -1,5 +1,8 @@
 console.log("Linked.");
 
+
+$(function() {
+
 // Dramatis Personae
 var hobbits = [
   'Frodo Baggins',
@@ -190,3 +193,5 @@ function thereAndBackAgain() {
 }
 
 thereAndBackAgain();
+
+})
