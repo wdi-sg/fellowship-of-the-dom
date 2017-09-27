@@ -118,75 +118,75 @@ function forgeTheFellowShip() {
 
 forgeTheFellowShip();
 
-var gandalf = fellowshipMembers[0];
+// var gandalf = fellowshipMembers[0];
 
-function theBalrog() {
-  // change the 'Gandalf' textNode to 'Gandalf the White'
-  gandalf.textContent = 'Gandalf the White';
-  // apply style to the element
-  gandalf.style.border = '3px solid gray';
-  // make the background 'white', add a grey border
-  gandalf.style.backgroundColor = 'white';
-}
-
-theBalrog();
-
-var boromir = fellowshipMembers[4];
-
-function hornOfGondor() {
-  alert('the horn of gondor has blown');
-  // pop up an alert that the horn of gondor has been blown
-  // put a linethrough on boromir's name
-  boromir.style.textDecoration = 'line-through';
-  // Boromir's been killed by the Uruk-hai!
-  // Remove Boromir from the Fellowship
-  boromir.parentNode.removeChild(boromir)
-
-}
-
-hornOfGondor();
-
-var sam = fellowshipMembers[6];
-
-function itsDangerousToGoAlone(){
-  // take Frodo and Sam out of the fellowship and move them to Mordor
-  mordor.appendChild(frodo);
-  mordor.appendChild(sam);
-  var mountDoom = document.createElement('div');
-  mountDoom.setAttribute('id', 'mount-doom');
-  mordor.appendChild(mountDoom);
-  // add a div with an id of 'mount-doom' to Mordor
-}
-
-itsDangerousToGoAlone();
-
-var gollum, theRing;
-
-function weWantsIt() {
-  // Create a div with an id of 'gollum' and add it to Mordor
-  gollum = document.createElement('div');
-  gollum.setAttribute('id', 'gollum');
-  theRing = frodo.querySelector('#the-ring');
-  gollum.appendChild(theRing);
-  // Remove the ring from Frodo and give it to Gollum
-  // Move Gollum into Mount Doom
-  var mountDoom = mordor.querySelector('#mount-doom');
-  mountDoom.appendChild(gollum);
-}
-
-weWantsIt();
-
-function thereAndBackAgain() {
-  gollum.parentElement.removeChild(gollum);
-  // remove Gollum and the Ring from the document
-  // remove all the baddies from the document
-  var hobbitUL = document.createElement('ul');
-  var hobbits = body.querySelectorAll('.hobbit');
-  for(var i = 0, len = hobbits.length; i < len; i++){
-    hobbitUL.appendChild(hobbits[i]);
-  }
-  theShire.appendChild(hobbitUL);
-  // Move all the hobbits back to the shire
-}
-
-thereAndBackAgain();
+// function theBalrog() {
+//   // change the 'Gandalf' textNode to 'Gandalf the White'
+//   gandalf.textContent = 'Gandalf the White';
+//   // apply style to the element
+//   gandalf.style.border = '3px solid gray';
+//   // make the background 'white', add a grey border
+//   gandalf.style.backgroundColor = 'white';
+// }
+//
+// theBalrog();
+//
+// var boromir = fellowshipMembers[4];
+//
+// function hornOfGondor() {
+//   alert('the horn of gondor has blown');
+//   // pop up an alert that the horn of gondor has been blown
+//   // put a linethrough on boromir's name
+//   boromir.style.textDecoration = 'line-through';
+//   // Boromir's been killed by the Uruk-hai!
+//   // Remove Boromir from the Fellowship
+//   boromir.parentNode.removeChild(boromir)
+//
+// }
+//
+// hornOfGondor();
+//
+// var sam = fellowshipMembers[6];
+//
+// function itsDangerousToGoAlone(){
+//   // take Frodo and Sam out of the fellowship and move them to Mordor
+//   mordor.appendChild(frodo);
+//   mordor.appendChild(sam);
+//   var mountDoom = document.createElement('div');
+//   mountDoom.setAttribute('id', 'mount-doom');
+//   mordor.appendChild(mountDoom);
+//   // add a div with an id of 'mount-doom' to Mordor
+// }
+//
+// itsDangerousToGoAlone();
+//
+// var gollum, theRing;
+//
+// function weWantsIt() {
+//   // Create a div with an id of 'gollum' and add it to Mordor
+//   gollum = document.createElement('div');
+//   gollum.setAttribute('id', 'gollum');
+//   theRing = frodo.querySelector('#the-ring');
+//   gollum.appendChild(theRing);
+//   // Remove the ring from Frodo and give it to Gollum
+//   // Move Gollum into Mount Doom
+//   var mountDoom = mordor.querySelector('#mount-doom');
+//   mountDoom.appendChild(gollum);
+// }
+//
+// weWantsIt();
+//
+// function thereAndBackAgain() {
+//   gollum.parentElement.removeChild(gollum);
+//   // remove Gollum and the Ring from the document
+//   // remove all the baddies from the document
+//   var hobbitUL = document.createElement('ul');
+//   var hobbits = body.querySelectorAll('.hobbit');
+//   for(var i = 0, len = hobbits.length; i < len; i++){
+//     hobbitUL.appendChild(hobbits[i]);
+//   }
+//   theShire.appendChild(hobbitUL);
+//   // Move all the hobbits back to the shire
+// }
+//
+// thereAndBackAgain();
