@@ -162,7 +162,7 @@
      //console.log(theRivendell)
      for(var i = 0; i < theRivendellLi.length; i++) {
        //var $person = $('article:nth-child(2)').find('li').eq(0).text();
-       //alert(theRivendellLi[i] +" has joined the fellowship")
+       alert(theRivendellLi[i] +" has joined the fellowship")
        $('#the-fellowship').append(theRivendellLi[i])
      }
    }
@@ -186,6 +186,7 @@
      // Boromir's been killed by the Uruk-hai!
      // put a linethrough on boromir's name
      // Remove Boromir from the Fellowship
+
      alert('horn of gondor has been blown!')
 
 
