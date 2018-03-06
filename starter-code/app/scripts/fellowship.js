@@ -151,11 +151,11 @@ function hornOfGondor() {
   alert("The horn of gondor has been blown");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
-
   // Remove Boromir from the Fellowship
   var fellowship_members = document.querySelectorAll("li");
   for (var i = 0; i < fellowship_members.length; i++) {
     if ((fellowship_members[i].innerText === "boromir") || (fellowship_members[i].innerText === "Boromir")) {
+      fellowship_members[i].style.textDecoration = "line-through";
       var fellowship = document.getElementById("the-fellowship");
       fellowship.removeChild(fellowship_members[i]);
     }
@@ -163,25 +163,77 @@ function hornOfGondor() {
 }
 hornOfGondor();
 
+
 // Part 10
+var mordor = document.querySelectorAll("article")[2];
 function itsDangerousToGoAlone(){
-  // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
+  var mount_doom = document.createElement("div");
+  mount_doom.id = "mount-doom";
+  // take Frodo and Sam out of the fellowship and move them to Mordor
+  var fellowship_members = document.querySelectorAll("li");
+  for (var i = 0; i < fellowship_members.length; i++) {
+    if (fellowship_members[i].innerText === "frodo baggins") {
+      var fellowship = document.getElementById("the-fellowship");
+      fellowship.removeChild(fellowship_members[i]);
+      mount_doom.appendChild(fellowship_members[i]);
+    }
+    else if (fellowship_members[i].innerText === "samwise 'sam' gamgee") {
+      var fellowship = document.getElementById("the-fellowship");
+      fellowship.removeChild(fellowship_members[i]);
+      mount_doom.appendChild(fellowship_members[i]);
+    }
+  }
+  mordor.appendChild(mount_doom);
 }
 itsDangerousToGoAlone();
+
 
 // Part 11
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement("div");
+  gollum.id = "gollum";
+  mordor.appendChild(gollum);
+
   // Remove the ring from Frodo and give it to Gollum
+  var fellowship_members = document.querySelectorAll("li");
+  for (var i = 0; i < fellowship_members.length; i++) {
+    if (fellowship_members[i].innerText === "frodo baggins") {
+      var removed_child = fellowship_members[i].firstChild.nextSibling;
+      fellowship_members[i].removeChild(removed_child);
+      gollum.appendChild(removed_child);
+    }
+  }
   // Move Gollum into Mount Doom
+  document.getElementById("mount-doom").appendChild(gollum);
 }
 weWantsIt();
 
+
 // Part 12
+var fellowship = document.getElementById("the-fellowship");
+var shire = document.querySelectorAll("article")[0];
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+  var doom = document.getElementById("mount-doom");
+  var remove_gollum_ring = doom.firstChild.nextSibling.nextSibling;
+  doom.removeChild(remove_gollum_ring);
+
   // remove all the baddies from the document
+  var fellowship_members = document.querySelectorAll("li");
+  for (var i = 0; i < fellowship_members.length; i++) {
+    if (fellowship_members[i].className != "hobbit") {
+      fellowship.removeChild(fellowship_members[i]);
+    }
+  }
+
   // Move all the hobbits back to the shire
+  var fellowship_members = document.querySelectorAll("li");
+  for (var i = 0; i < fellowship_members.length; i++) {
+    if (fellowship_members[i].className === "hobbit") {
+      shire.appendChild(fellowship_members[i]);
+    }
+  }
 }
 thereAndBackAgain();
