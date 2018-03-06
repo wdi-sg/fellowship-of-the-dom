@@ -22,14 +22,22 @@ var body = document.querySelector('body');
 
 // Part 1
 
-
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
-  // add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
-  // append middle-earth to your document body
-}
+  var middleEarth = document.createElement("section");
 
+  // add each land as an article tag
+  for (var i=0; i<lands.length; i++){
+    var land = document.createElement('article');
+
+    // inside each article tag include an h1 with the name of the land
+    land.innerHTML = '<h1>' + lands[i] + '</h1>';
+    middleEarth.appendChild(land);
+  }
+
+  // append middle-earth to your document body
+  body.appendChild(middleEarth);
+}
 makeMiddleEarth();
 
 
@@ -37,23 +45,37 @@ makeMiddleEarth();
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
-  // give each hobbit a class of hobbit
+  var shire = document.querySelectorAll("article")[0];
+  console.log("Shire is " + shire);
+  var hobbit_list = document.createElement("ul");
+  for (var i = 0; i < hobbits.length; i++) {
+    var li = document.createElement("li");
+    li.innerHTML = hobbits[i];
+    li.className = "hobbit";
+    hobbit_list.appendChild(li);
+    shire.appendChild(hobbit_list);
+  }
 }
+makeHobbits();
 
 
 // Part 3
-
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var div = document.createElement("div");
+  div.id = "the-ring";
   // give the div a class of 'magic-imbued-jewelry'
+  div.className = "magic-imbued-jewelry";
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  div.addEventListener('click', nazgulScreech);
   // add the ring as a child of Frodo
+  var frodo = body.querySelectorAll('li')[0];
+  frodo.appendChild(div);
 }
+keepItSecretKeepItSafe();
 
 
 // Part 4
-
-
 function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
