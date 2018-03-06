@@ -119,34 +119,56 @@ leaveTheShire();
 // Part 7
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
-  // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+  var rivendell = document.querySelectorAll("article")[1];
+  var members = document.querySelectorAll("li");
+  var fellowship = document.createElement("div");
+  fellowship.id = "the-fellowship";
+  for (var i = 0; i < members.length; i++) {
+    fellowship.appendChild(members[i]);
+    alert(members[i].innerText + " has joined the party");
+  }
+  rivendell.appendChild(fellowship);
 }
+forgeTheFellowShip();
 
 
 // Part 8
+var gandalf = document.querySelectorAll("li")[0];
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  gandalf.innerText = "Gandalf the White";
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.backgroundColor = "white";
+  gandalf.style.border = "3px solid grey";
 }
+theBalrog();
 
 
 // Part 9
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
+  alert("The horn of gondor has been blown");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
-  // Remove Boromir from the Fellowship
-}
 
+  // Remove Boromir from the Fellowship
+  var fellowship_members = document.querySelectorAll("li");
+  for (var i = 0; i < fellowship_members.length; i++) {
+    if ((fellowship_members[i].innerText === "boromir") || (fellowship_members[i].innerText === "Boromir")) {
+      var fellowship = document.getElementById("the-fellowship");
+      fellowship.removeChild(fellowship_members[i]);
+    }
+  }
+}
+hornOfGondor();
 
 // Part 10
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
 }
-
+itsDangerousToGoAlone();
 
 // Part 11
 function weWantsIt() {
@@ -154,7 +176,7 @@ function weWantsIt() {
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
 }
-
+weWantsIt();
 
 // Part 12
 function thereAndBackAgain() {
@@ -162,3 +184,4 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+thereAndBackAgain();
