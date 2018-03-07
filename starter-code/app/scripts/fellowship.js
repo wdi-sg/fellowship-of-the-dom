@@ -256,13 +256,37 @@ function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
+  let gollum = document.createElement("div");
+  gollum.id = "gollum";
+  let ring = body.querySelector("#the-ring");
+  // console.log(ring);
+
+  gollum.appendChild(ring);
+
+  // console.log(gollum);
+
+  let mountDoom = body.querySelector("#mount-doom");
+
+  mountDoom.appendChild(gollum);
+
 }
 
-
+weWantsIt();
 // Part 12
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+
+  let gollum = body.querySelector("#gollum");
+  console.log(gollum);
+
+  let parent = gollum.parentNode;
+  console.log(parent.innerHTML);
+  console.log(parent.innerText);
+  parent.removeChild(gollum);
+
 }
+
+thereAndBackAgain();
