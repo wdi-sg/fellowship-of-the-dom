@@ -61,7 +61,7 @@ function makeHobbits() {
   // give each hobbit a class of hobbit
   let ul = document.createElement('ul');
   makeList(hobbits, ul, 'hobbit');
-  document.querySelectorAll('article')[0].appendChild(ul);
+  document.querySelector('article').appendChild(ul);
 }
 
 makeHobbits();
@@ -85,7 +85,7 @@ function spookFrodo() {
     doomCount++;
     if (doomCount === 3) {
       document.body.parentNode.removeChild(document.body);
-      let d = document.createElement('body')
+      let d = document.createElement('body');
       d.textContent = "The Ring has been returned to Sauron and the world is over.";
       d.style.backgroundImage = '';
       d.style.background = 'white';
@@ -95,7 +95,7 @@ function spookFrodo() {
       d.style.textShadow = 'none';
       d.style.padding = '10% 0 0 0';
       d.style.textAlign = 'center';
-      Array.from(document.getElementsByTagName('html'))[0].appendChild(d);
+      document.querySelector('html').appendChild(d);
       return;
     }
     setTimeout(spookFrodo, 2000);
@@ -180,9 +180,9 @@ function forgeTheFellowShip() {
   let ul = document.createElement('ul');
   let l = Array.from(document.getElementsByTagName('li'));
   l.forEach(fella => {
-    if (hobbits.includes(fella.textContent) || buddies.includes(fella.textContent) || fella.textContent === 'Aragorn' || fella.textContent === 'Strider') {
+    if (hobbits.includes(fella.textContent) || buddies.includes(fella.textContent) || fella.textContent === 'Aragorn') { // Detect 'Aragorn' here in case his name has been changed already. 'Strider' was in the list of buddies.
       ul.appendChild(fella)
-      console.log(fella.textContent + " has joined the party!");
+      console.log(fella.textContent + " has joined the party!"); //I hate alerts. Gonna use console.log instead.
     }
   });
   d.appendChild(ul);
@@ -198,11 +198,10 @@ function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-  let l = Array.from(document.getElementsByTagName('li')).filter(fella => fella.textContent === 'Gandalf the Grey');
-  l[0].textContent = 'Gandalf the White';
-  l[0].textContent = 'Gandalf the White';
-  l[0].style.backgroundColor = 'white';
-  l[0].style.border = '2px solid gray';
+  let l = Array.from(document.getElementsByTagName('li')).filter(fella => fella.textContent === 'Gandalf the Grey')[0];
+  l.textContent = 'Gandalf the White';
+  l.style.backgroundColor = 'white';
+  l.style.border = '2px solid gray';
 };
 
 // theBalrog();
@@ -216,9 +215,9 @@ function hornOfGondor() {
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
   console.log("The horn of gondor has been blown!");
-  let l = Array.from(document.getElementsByTagName('li')).filter(fella => fella.textContent === 'Boromir');
-  l[0].style.textDecoration = 'line-through';
-  l[0].parentNode.removeChild(l[0]);
+  let l = Array.from(document.getElementsByTagName('li')).filter(fella => fella.textContent === 'Boromir')[0];
+  l.style.textDecoration = 'line-through';
+  l.parentNode.removeChild(l);
 }
 
 // hornOfGondor();
@@ -232,8 +231,10 @@ function itsDangerousToGoAlone(){
   d.id = 'mount-doom';
   let l = Array.from(document.getElementsByTagName('li')).filter(fella => {return fella.textContent === 'Frodo Baggins' || fella.textContent === 'Samwise \'Sam\' Gamgee'});
   let mordor = document.querySelectorAll('article')[2];
-  mordor.appendChild(l[0]);
-  mordor.appendChild(l[1]);
+  let ul = document.createElement('ul');
+  ul.appendChild(l[0]);
+  ul.appendChild(l[1]);
+  mordor.appendChild(ul);
   mordor.appendChild(d);
 }
 
@@ -268,7 +269,7 @@ function thereAndBackAgain() {
   let h = Array.from(document.querySelectorAll('.hobbit'));
   let ul = document.createElement('ul');
   h.forEach(l => ul.appendChild(l));
-  document.querySelectorAll('article')[0].appendChild(ul);
+  document.querySelector('article').appendChild(ul);
 }
 
 // thereAndBackAgain();
