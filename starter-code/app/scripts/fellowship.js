@@ -162,7 +162,7 @@ var boromir = fellowShips[4];
 function hornOfGondor() {
   alert("the horn of gondor has been blown");
   boromir.style.textDecoration = 'line-through';
-  boromir.parentNode.removeChild('boromir');
+  boromir.parentNode.removeChild(boromir);
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
@@ -178,7 +178,7 @@ var sam = fellowShips[6];
 function itsDangerousToGoAlone(){
   mordor.appendChild(frodo);
   mordor.appendChild(sam);
-  var mountDoom = createElement('div');
+  var mountDoom = document.createElement('div');
   mountDoom.setAttribute('id', 'mount-doom');
   mordor.appendChild(mountDoom);
   // take Frodo and Sam out of the fellowship and move them to Mordor
