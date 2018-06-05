@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded',function(){
+  // all yur code goes here
+
 console.log("Linked.");
 
 // Dramatis Personae
@@ -28,18 +31,32 @@ function makeMiddleEarth() {
   // add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
-}
-
-makeMiddleEarth();
-
+  var middleEarth = document.createElement('section');
+  middleEarth.id = "middle-earth";
+  for (var i=0; i<lands.length; i++) {
+    var land = document.createElement('article');
+    land.innerHTML = '<h1>' + lands[i] + '</h1>';
+    middleEarth.appendChild(land);
+  }   
+  body.appendChild(middleEarth);
+ }
+ makeMiddleEarth();
 
 // Part 2
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
   // give each hobbit a class of hobbit
+  var hobbitsUl = document.createElement('ul');
+  for(var hobsIndex = 0; hobsIndex < hobbits.length; hobsIndex++){
+    var hobbit = document.createElement('li');
+    hobbit.textContent = hobbits[hobsIndex];
+    hobbit.className = "hobbit";
+    hobbitsUl.appendChild(hobbit);
+  }
+  body.appendChild(hobbitsUl);
 }
-
+makeHobbits();
 
 // Part 3
 
@@ -48,7 +65,23 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
-}
+  //getElementByClassName('hobbits')[0]
+  var theRing = document.createElement('div');
+  //theRing.setAttribute('id', "the-ring");
+  theRing.id = "the-ring";
+  theRing.className = "magic-imbued-jewelry";
+  //theRing.setAttribute('class', "magic-imbued-jewelry");
+  body.appendChild(theRing);
+
+  var audio = document.createElement('audio');
+  audio.setAttribute("src", "media/nazgul_screech.mp3");
+  theRing.addEventListener('click', nazgulScreech);
+  var frodo = document.getElementsByClassName('hobbit')[0];
+  frodo.appendChild(theRing);
+
+  }
+  keepItSecretKeepItSafe();
+  
 
 
 // Part 4
@@ -130,3 +163,4 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+});
