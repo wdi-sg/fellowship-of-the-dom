@@ -27,7 +27,7 @@ function makeMiddleEarth() {
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
       var middleEarth = document.createElement('section');
-        middleEarth.setAttribute('id, middle-earth');
+        // middleEarth.setAttribute('id, middle-earth');
         for (var i=0; i<lands.length; i++) {
         var land = document.createElement('article');
         land.innerHTML = "<h1>" + lands[i] + "</h1>";
@@ -35,7 +35,6 @@ function makeMiddleEarth() {
         body.appendChild(middleEarth);
         }
     }
-     
 makeMiddleEarth();
 
 // Part 2
@@ -52,7 +51,7 @@ function makeHobbits() {
   }
   theShire.appendChild(theHobbits);
 }
-
+makeHobbits();
 
 // Part 3
 
@@ -67,7 +66,7 @@ function keepItSecretKeepItSafe() {
   theRing.addEventListener('click', nazgulScreech);
   frodo.appendChild(theRing);
 }
-
+keepItSecretKeepItSafe();
 
 // Part 4
 
@@ -94,14 +93,19 @@ makeBuddies();
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+// .getElementsByTagName("title")[0].childNodes[0].nodeValue = "new content"
+var striderAragon = rivendell.querySelectorAll('li')[3];
 }
 
+beautifulStranger();
 
 // Part 6
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  rivendell.appendChild(hobbits);
 }
+leaveTheShire();
 
 
 // Part 7
@@ -111,6 +115,9 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
+  var fellowship = document.createElement('div');
+  fellowship.setAttribute('id, the-fellowship');
+
 }
 
 
