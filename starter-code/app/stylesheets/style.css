@@ -4,6 +4,16 @@ html, body {
   margin: 0 0 0 0;
 }
 
+.frodo-in {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+.frodo-out {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
 
 @font-face {
   font-family: Bilbo;
@@ -167,4 +177,5 @@ ul {
     top: 385px;
   }
 
+}
 }
