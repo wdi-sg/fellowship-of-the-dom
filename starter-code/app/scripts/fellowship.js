@@ -75,7 +75,6 @@ keepItSecretKeepItSafe();
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
 
-
 function makeBuddies() {
   var buddyList = document.createElement('aside');
   buddyList.document.createElement('ul');
@@ -95,7 +94,7 @@ makeBuddies();
   // .getElementsByTagName("title")[0].childNodes[0].nodeValue = "new content"
 
 function beautifulStranger() {
-  var striderAragon = rivendell.querySelectorsAll('li')[3];
+  var striderAragon = rivendell.querySelectorAll('li')[3];
   strider.textContent = 'Aragorn';
 }
 beautifulStranger();
@@ -117,7 +116,7 @@ function forgeTheFellowShip() {
   // after each character is added make an alert that they have joined your party
   var theFellowship = document.createElement('div');
   fellowship.setAttribute('id, the-fellowship');
-  var theFellowship = rivendell.querySelectorsAll('li');
+  var theFellowship = rivendell.querySelectorAll('li');
   for (i=o; i<theFellowship.length; i++) {
     alert(theFellowship[i].textContent + "has joined your party.");
   }
@@ -167,18 +166,23 @@ function itsDangerousToGoAlone(){
 itsDangerousToGoAlone();
 
 // Part 11
-
-function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-}
 
+function weWantsIt() {
+  var gollum = document.createElement('div');
+  mordor.appendChild(gollum);
+  gollum.appendChild(theRing);
+  mountDoom.appendChild(gollum);
+}
+weWantsIt();
 
 // Part 12
-
-function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+
+function thereAndBackAgain() {
+  gollum.parentElement.removeChild(gollum);
 }
