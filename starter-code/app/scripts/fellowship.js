@@ -76,7 +76,17 @@ function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+  var buddyList = document.createElement('aside');
+  buddyList.document.createElement('ul');
+  for (var i=0; i<buddies.length; i++) {
+    var unorderedBuddies = document.createElement('li');
+    unorderedBuddies = buddies[i];
+    buddyList.appendChild(unorderedBuddies);
+  }
+  aside.appendChild(buddyList);
+  rivendell.appendChild(aside);
 }
+makeBuddies();
 
 
 // Part 5
