@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>The Fellowship of the Ring</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
+</head>
+
+
+
+<body>
+  <div class="overlay">
+  </div>
+  <audio id="nazgul-screech" src="./media/nazgul_screech.mp3"></audio>
+  <script charset="utf-8">
+    function nazgulScreech(){
+      // jQuery doesn't have a play() method, so vanilla js it is
+      document.getElementById("nazgul-screech").play();
+    }
+  </script>
+  <script src="./scripts/fellowship.js"></script>
+
+  <section>
+  	<article>
+  		<h1>The Shire</h1>
+  		<ul>
+  			<li class="hobbit">Meriadoc 'Merry' Brandybuck</li>
+  			<li class="hobbit">Peregrin 'Pippin' Took</li>
+  			<li class="hobbit">Frodo Baggins</li>
+  			<li class="hobbit">Samwise 'Sam' Gamgee</li>
+  		</ul>
+  	</article>
+
+  	<article>
+  		<h1>Rivendell</h1>
+  		<aside>
+  			<ul></ul>
+  		</aside>
+
+  		<ul></ul>
+
+  		<div id="the-fellowship">
+  			<li style="border: 3px solid gray; background-color: white;">Gandalf the White</li>
+  			<li>Legolas</li>
+  			<li>Gimli</li>
+  			<li>Aragon</li>
+  		</div>
+  	</article>
+
+  	<article>
+  		<h1>Mordor</h1>
+  		<div id="mount-doom"></div>
+  	</article>
+  </section>
+
+
+</body>
+</html>

@@ -79,7 +79,7 @@ function keepItSecretKeepItSafe() {
   horrorMovie.className = 'magic-imbued-jewelry';
 
   // console.log(clickedRing);
-  horrorMovie.addEventListener('click', nazgulScreech());
+  horrorMovie.addEventListener('click', nazgulScreech);
 
   var foo = document.getElementsByClassName('hobbit');
   // for (var i = 0; i < foo.length; i++) {
@@ -142,31 +142,39 @@ function beautifulStranger() {
 beautifulStranger();
 
 // Part 6
+var rivendell, findHobbits;
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
-  var finding = document.getElementsByTagName('article');
-
-  for (var i = 0; i < finding.length; i++) {
-    var heading = finding[i].getElementsByTagName('h1');
-    console.log(heading);
-    if(heading.innerText == 'the shire'){
-
-    }
-  }
-
+  rivendell = document.getElementsByTagName('ul')[1];
+  findHobbits = document.getElementsByTagName('ul')[0];
+  while (findHobbits.hasChildNodes()) {
+    rivendell.appendChild(findHobbits.firstChild);
+  } 
 }
 leaveTheShire();
 
 
 // Part 7
-
-
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var fellowship = document.createElement('div');
+  fellowship.id = 'the-fellowship';
   // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+
+  var everyone = document.getElementsByTagName('li');
+  // for (var i = 0; i < everyone.length; i++) {
+  //   fellowship.appendChild(everyone[i]);
+  //   alert(everyone[i] + "has joined the party!");
+  // }
+  while (rivendell.hasChildNodes()) {
+    alert(rivendell.firstChild.textContent + "has joined the party.");    
+    fellowship.appendChild(rivendell.firstChild);
+  }
+  rivendell.appendChild(fellowship);
 }
+
+forgeTheFellowShip();
 
 
 // Part 8
