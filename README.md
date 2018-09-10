@@ -1,8 +1,8 @@
 # Fellowship of the Ring DOM Manipulation
 
-## Introduction
+![https://media.giphy.com/media/sWIHPcLkmxDby/giphy.gif](https://media.giphy.com/media/sWIHPcLkmxDby/giphy.gif)
 
-> ***Note:*** _This can be a pair programming activity or done independently._
+## Introduction
 
 To practice manipulating the DOM, we've provided you with a series of steps in a `.js` file.  Create a function for each of the steps to practice DOM Manipulation and JavaScript. These should each be called in order after the window has loaded.
 
@@ -17,6 +17,9 @@ To practice manipulating the DOM, we've provided you with a series of steps in a
 
 - Within the click listener for clicking `'#the-ring'`, add functionality so that when it's clicked, it not only calls `nazgulScreech` but also causes Frodo's opacity to go down to 0 for a while, only to fade back in.
 - If the ring is clicked three times, the entire body element should disappear, to be replaced with the text "The Ring has been returned to Sauron and the world is over."
+
+**Bonus:**
+Delay each step with a `setTimeout`, so that the DOM manipulation can be seen clearly.
 
 #### Starter code
 
