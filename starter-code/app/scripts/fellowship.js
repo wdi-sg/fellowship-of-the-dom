@@ -123,11 +123,10 @@ function beautifulStranger() {
 beautifulStranger();
 
 // Part 6
-
+// assemble the hobbits and move them to Rivendell; Put as global variable for part 6 and 7
+var assemble = document.querySelector(".hobbit");
 function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
-  var assemble = document.querySelector(".hobbit");
-  console.log(assemble);
+  //console.log(assemble);
   var rivendell = document.getElementsByTagName("article")[1];
   rivendell.appendChild(assemble);
   console.log(rivendell);
@@ -140,9 +139,23 @@ leaveTheShire();
 
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var div2 = document.createElement('div');
+  div2.id = "the-fellowship";
+  var rivendell = body.querySelectorAll('article')[1];
+  rivendell.appendChild(div2);
+  console.log(rivendell);
   // add each hobbit and buddy one at a time to 'the-fellowship'
+  var hobbitList = document.getElementsByTagName("ul")[1];
+  var party = document.getElementsByTagName("div")[2];
+  while (hobbitList.hasChildNodes()) {
+    party.appendChild(hobbitList.firstChild);
+  }
+
   // after each character is added make an alert that they have joined your party
+  //alert(party.lastChild.textContent + " has joined the Fellowship!");
 }
+
+forgeTheFellowShip();
 
 
 // Part 8
