@@ -22,14 +22,14 @@ var body = document.querySelector('body');
 
 // Part 1
 function makeMiddleEarth() {
-  var middleEarth = document.createElement('section')  // create a section tag with an id of middle-earth
+  var middleEarth = document.createElement('section')
 
   for(var i = 0 ; i<lands.length ; i++){
-    var eachLand = document.createElement('article')// add each land as an article tag
-    eachLand.innerHTML= "<h1>" + lands[i] + "</h1>"// inside each article tag include an h1 with the name of the land
-    middleEarth.appendChild(eachLand)// inside each article tag include an h1 with the name of the land
-  }
-  body.appendChild(middleEarth)// append middle-earth to your document body
+    var eachLand = document.createElement('article')
+    eachLand.innerHTML= "<h1>" + lands[i] + "</h1>"
+    middleEarth.appendChild(eachLand)
+    body.appendChild(middleEarth)
+    }
 }
 
 
@@ -41,7 +41,7 @@ var mordor = body.querySelectorAll('article')[2]
 
 // Part 2
 // display an unordered list of hobbits in the shire (which is the second article tag on the page)
-  // give each hobbit a class of hobbit
+// give each hobbit a class of hobbit
 
 function makeHobbits(){
   var hobbitList=document.createElement('ul');
@@ -58,9 +58,9 @@ makeHobbits();
 
 // Part 3
 // create a div with an id of 'the-ring'
-  // give the div a class of 'magic-imbued-jewelry'
-  // add the ring as a child of Frodo
-  // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+// give the div a class of 'magic-imbued-jewelry'
+// add the ring as a child of Frodo
+// Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 
 var frodo = body.querySelectorAll('li')[0]
 
@@ -75,8 +75,8 @@ keepItSecretKeepItSafe();
 
 // Part 4
 // create an aside tag
-  // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
+// attach an unordered list of the 'buddies' in the aside
+// insert your aside as a child element of rivendell
 
 function makeBuddies() {
   var aside = document.createElement('aside');
@@ -93,7 +93,7 @@ function makeBuddies() {
 makeBuddies()
 
 // Part 5
- // change the 'Strider' textnode to 'Aragorn'
+// change the 'Strider' textnode to 'Aragorn'
  var strider = rivendell.querySelectorAll('li')[3];
 
 function beautifulStranger() {
@@ -148,10 +148,10 @@ theBalrog()
 
 
 // // Part 9
-  // pop up an alert that the horn of gondor has been blown
-  // Boromir's been killed by the Uruk-hai!
-  // put a linethrough on boromir's name
-  // Remove Boromir from the Fellowship
+// pop up an alert that the horn of gondor has been blown
+// Boromir's been killed by the Uruk-hai!
+// put a linethrough on boromir's name
+// Remove Boromir from the Fellowship
 var boromir = fellowshipMembers[4]
 
 function hornOfGondor() {
@@ -180,9 +180,9 @@ itsDangerousToGoAlone();
 
 
 // // Part 11
-  // Create a div with an id of 'gollum' and add it to Mordor
-  // Remove the ring from Frodo and give it to Gollum
-  // Move Gollum into Mount Doom
+// Create a div with an id of 'gollum' and add it to Mordor
+// Remove the ring from Frodo and give it to Gollum
+// Move Gollum into Mount Doom
 
 var gollum, theRing
 
