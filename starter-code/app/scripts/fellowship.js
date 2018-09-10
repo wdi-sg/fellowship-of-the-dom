@@ -16,6 +16,15 @@ var buddies = [
   'Boromir'
 ];
 
+// Part 5
+
+
+function beautifulStranger() {
+buddies[3] = 'Aragorn';
+
+}
+beautifulStranger();
+
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 var sectionOne = document.createElement('div');
@@ -114,6 +123,7 @@ function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
 // insert your aside as a child element of rivendell
+
      unorderedListB = document.createElement('aside');
 
         for(var i = 0; i < buddies.length; i++) {
@@ -129,15 +139,12 @@ function makeBuddies() {
 
             buddiesList.textContent = buddies[i];
 
-}
-}
+        }
+};
+
 makeBuddies();
-// Part 5
 
 
-function beautifulStranger() {
-  // change the 'Strider' textnode to 'Aragorn'
-}
 
 
 // Part 6
