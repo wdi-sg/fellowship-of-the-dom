@@ -1,4 +1,3 @@
-console.log("Linked.");
 
 // Dramatis Personae
 var hobbits = [
@@ -18,17 +17,39 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
+var sectionOne = document.createElement('div');
 
 // Part 1
 
-
 function makeMiddleEarth() {
+
   // create a section tag with an id of middle-earth
+
+  var sectionOne = document.createElement('div');
+  sectionOne.id = "middle-earth";
+
   // add each land as an article tag
+
+    var sectionTwo = document.createElement("article");
+
+    for(var i = 0; i < 3; i++) {
+        var articleDiv = document.createElement('article');
+        var pushInside = sectionOne.appendChild(articleDiv);
+
   // inside each article tag include an h1 with the name of the land
+
+        var createHeader = document.createElement('h1');
+
+        createHeader.textContent = lands[i];
+        pushInside.appendChild(createHeader);
+
+    }
   // append middle-earth to your document body
-}
+
+    body.appendChild(sectionOne);
+};
+
+//console.log(body);
 
 makeMiddleEarth();
 
