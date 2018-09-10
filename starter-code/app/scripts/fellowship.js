@@ -121,8 +121,14 @@ beautifulStranger()
 
 function leaveTheShire() {
     // assemble the hobbits and move them to Rivendell
+    var shire = document.querySelectorAll('article')[0]
+    var rivendell = document.querySelectorAll('article')[1]
+    var hobbitSquad = shire.children[1]
+    shire.removeChild(hobbitSquad)
+    rivendell.appendChild(hobbitSquad)
 }
 
+leaveTheShire()
 
 // Part 7
 
