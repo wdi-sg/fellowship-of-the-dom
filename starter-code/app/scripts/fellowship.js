@@ -107,11 +107,16 @@ function beautifulStranger() {
     var target = document.getElementsByTagName("li");
     var searchText = "Strider";
 
-    for (var i = 0; i < target.length; i++) {
-        if (target[i].textContent == searchText) {
-            target[i].textContent = 'Aragorn'
-        }
-    }
+    [].forEach.call(target, function(element) {
+        if (element.textContent == searchText)
+            element.textContent = 'Aragorn'
+    })
+
+    // for (var i = 0; i < target.length; i++) {
+    //     if (target[i].textContent == searchText) {
+    //         target[i].textContent = 'Aragorn'
+    //     }
+    // }
 }
 
 beautifulStranger()
@@ -124,7 +129,7 @@ function leaveTheShire() {
     var shire = document.querySelectorAll('article')[0]
     var rivendell = document.querySelectorAll('article')[1]
     var hobbitSquad = shire.children[1]
-    shire.removeChild(hobbitSquad)
+    //shire.removeChild(hobbitSquad)
     rivendell.appendChild(hobbitSquad)
 }
 
@@ -252,8 +257,8 @@ function weWantsIt() {
     for (var i = target.length - 1; i >= 0; i--) {
         if (target[i].textContent == 'Frodo Baggins') {
             content = target[i]
-            var removeRing = content.removeChild(ring)
-            gollum.appendChild(removeRing)
+            //var removeRing = content.removeChild(ring)
+            gollum.appendChild(ring)
         }
     }
     mountDoom.appendChild(gollum)
@@ -277,7 +282,6 @@ function thereAndBackAgain() {
     }
 
     [].forEach.call(hobbitSquad, function(element) {
-        console.log(element)
         shire.appendChild(element)
     })
 
