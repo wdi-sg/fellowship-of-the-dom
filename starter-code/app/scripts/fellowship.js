@@ -28,6 +28,14 @@ function makeMiddleEarth() {
   // add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
+  var middleEarth = document.createElement('section')
+  middleEarth.setAttribute('id', 'middle-earth')
+  lands.forEach(function(element) {
+      var newLand = document.createElement('article')
+      newLand.innerHTML = `<h1>${element}</h1>`
+      middleEarth.appendChild(newLand)
+  })
+  body.appendChild(middleEarth)
 }
 
 makeMiddleEarth();
