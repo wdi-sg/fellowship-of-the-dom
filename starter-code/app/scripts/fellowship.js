@@ -213,7 +213,24 @@ hornOfGondor()
 function itsDangerousToGoAlone() {
     // take Frodo and Sam out of the fellowship and move them to Mordor
     // add a div with an id of 'mount-doom' to Mordor
+    var mordor = document.querySelectorAll('article')[2]
+    var mountDoom = document.createElement('div')
+    var target = document.getElementsByTagName("li")
+    var content
+
+    mountDoom.setAttribute('id', 'mount-doom')
+
+    for (var i = target.length - 1; i >= 0; i--) {
+        if (target[i].textContent == 'Frodo Baggins' || target[i].textContent == "Samwise 'Sam' Gamgee") {
+            content = target[i]
+            console.log(content)
+            mordor.firstChild.appendChild(content)
+        }
+    }
 }
+
+itsDangerousToGoAlone()
+
 
 
 // Part 11
