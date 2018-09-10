@@ -114,7 +114,14 @@ ul {
   width: inherit;
 }
 
+.hide {
+  opacity: 0;
+}
 
+.fade-in {
+  opacity: 1;
+  transition: opacity 2s;
+}
 
 
 

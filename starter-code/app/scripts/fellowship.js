@@ -74,10 +74,25 @@ function keepItSecretKeepItSafe() {
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   var ring = document.createElement('div');
   var frodo = document.querySelector('li');
+  var span = document.createElement('span');
+  var text = frodo.firstChild;
+
+  frodo.insertBefore(span, text);
+  span.appendChild(text);
+
+  var fade = function () {
+    span.className = '';
+    span.classList.add('hide');
+
+    setTimeout(function () {
+      span.classList.add('fade-in');
+    }, 2000);
+  };
 
   ring.id = 'the-ring';
   ring.classList.add('magic-imbued-jewelry');
   ring.addEventListener('click', nazgulScreech);
+  ring.addEventListener('click', fade);
 
   frodo.appendChild(ring);
 }
