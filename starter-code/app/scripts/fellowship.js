@@ -177,7 +177,7 @@ theBalrog();
 
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
-  var blown = alert("The horn of gondor has been blown");
+  //var blown = alert("The horn of gondor has been blown");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   var boromir = document.getElementsByTagName("li")[8];
@@ -193,8 +193,19 @@ hornOfGondor();
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  var sam = document.getElementsByClassName("hobbit")[0];
+  var frodo = document.getElementsByClassName("hobbit")[3];
+  var mordor = document.getElementsByTagName('article')[2];
+  mordor.appendChild(sam);
+  mordor.appendChild(frodo);
+  //console.log(mordor);
   // add a div with an id of 'mount-doom' to Mordor
+  var div3 = document.createElement('div');
+  div3.id = "mount-doom";
+  mordor.appendChild(div3);
+  console.log(mordor);
 }
+itsDangerousToGoAlone();
 
 
 // Part 11
