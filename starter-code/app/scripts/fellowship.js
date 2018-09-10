@@ -102,36 +102,36 @@ makeHobbits();
 
 
 
-// Part 3
-/*
-function keepItSecretKeepItSafe() {
 
-  // create a div with an id of 'the-ring'
-
-  ringLotro = document.createElement("the-ring");
-  ringLotro.id = "magic-imbued-jewelry";
-
-  // give the div a class of 'magic-imbued-jewelry'
-
-  ringLotro.classList.add("hobbit");
-
-  // add the ring as a child of Frodo
-     frodo = document.getElementsByClassName('hobbit'[0]);
-     frodo.appendChild(ringLotro);
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-}
-keepItSecretKeepItSafe();
-*/
+
+//keepItSecretKeepItSafe();
+
 // Part 4
 
 
 function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
+// insert your aside as a child element of rivendell
+     unorderedListB = document.createElement('aside');
+
+        for(var i = 0; i < buddies.length; i++) {
+
+            b = document.getElementsByTagName("article");
+
+            pushInsideThree = b[1].appendChild(unorderedListB);
+
+
+            listOfBuddies = document.createElement('li');
+
+            buddiesList = pushInsideThree.appendChild(listOfBuddies);
+
+            buddiesList.textContent = buddies[i];
+
 }
-
-
+}
+makeBuddies();
 // Part 5
 
 
