@@ -65,6 +65,7 @@ function makeHobbits() {
     unorderedList = document.createElement('ul');
 
         for(var i = 0; i < hobbits.length; i++) {
+
             a = document.getElementsByTagName("article");
 
             pushInsideTwo = a[0].appendChild(unorderedList);
@@ -83,16 +84,44 @@ function makeHobbits() {
 };
 
 makeHobbits();
-// Part 3
 
-function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+
+  ringLotro = document.createElement('div');
+  ringLotro.id = "the-ring";
+  ringLotro.classList.add("magic-imbued-jewelry");
+
   // give the div a class of 'magic-imbued-jewelry'
+
+
+
   // add the ring as a child of Frodo
+  //frodo = document.getElementsByClassName('hobbit');
+     frodo = document.querySelector("li");
+    frodo.appendChild(ringLotro);
+
+
+
+// Part 3
+/*
+function keepItSecretKeepItSafe() {
+
+  // create a div with an id of 'the-ring'
+
+  ringLotro = document.createElement("the-ring");
+  ringLotro.id = "magic-imbued-jewelry";
+
+  // give the div a class of 'magic-imbued-jewelry'
+
+  ringLotro.classList.add("hobbit");
+
+  // add the ring as a child of Frodo
+     frodo = document.getElementsByClassName('hobbit'[0]);
+     frodo.appendChild(ringLotro);
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 }
-
-
+keepItSecretKeepItSafe();
+*/
 // Part 4
 
 
