@@ -227,8 +227,6 @@ function itsDangerousToGoAlone() {
             mordor.firstChild.appendChild(content)
         }
     }
-
-
 }
 
 itsDangerousToGoAlone()
@@ -258,9 +256,7 @@ function weWantsIt() {
             gollum.appendChild(removeRing)
         }
     }
-    console.log(gollum)
     mountDoom.appendChild(gollum)
-
 }
 
 weWantsIt()
@@ -272,4 +268,19 @@ function thereAndBackAgain() {
     // remove Gollum and the Ring from the document
     // remove all the baddies from the document
     // Move all the hobbits back to the shire
+    var mountDoom = document.getElementById('mount-doom')
+    var shire = document.querySelectorAll('article')[0]
+    var hobbitSquad = document.getElementsByClassName('hobbit')
+
+    while (mountDoom.firstChild) {
+        mountDoom.removeChild(mountDoom.firstChild)
+    }
+
+    [].forEach.call(hobbitSquad, function(element) {
+        console.log(element)
+        shire.appendChild(element)
+    })
+
 }
+
+thereAndBackAgain()
