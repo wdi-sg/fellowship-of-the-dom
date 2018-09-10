@@ -16,10 +16,37 @@ var buddies = [
   'Boromir'
 ];
 
+var functions = [
+  makeMiddleEarth,
+  makeHobbits,
+  keepItSecretKeepItSafe,
+  makeBuddies,
+  beautifulStranger,
+  leaveTheShire,
+  forgeTheFellowShip,
+  theBalrog,
+  hornOfGondor,
+  itsDangerousToGoAlone,
+  weWantsIt,
+  thereAndBackAgain
+];
+
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 var ringClicked = 0;
 
+window.onload = function () {
+  var i = 0;
+
+  var timer = setInterval(function () {
+    functions[i]();
+    i++;
+
+    if (i === functions.length) {
+      clearInterval(timer);
+    }
+  }, 3000);
+};
 
 // Part 1
 
@@ -42,9 +69,6 @@ function makeMiddleEarth() {
   body.appendChild(middleEarth);
 }
 
-makeMiddleEarth();
-
-
 // Part 2
 
 function makeHobbits() {
@@ -62,9 +86,6 @@ function makeHobbits() {
 
   shire.appendChild(list);
 }
-
-makeHobbits();
-
 
 // Part 3
 
@@ -109,9 +130,6 @@ function keepItSecretKeepItSafe() {
   frodo.appendChild(ring);
 }
 
-keepItSecretKeepItSafe();
-
-
 // Part 4
 
 function makeBuddies() {
@@ -133,8 +151,6 @@ function makeBuddies() {
   rivendell.appendChild(aside);
 }
 
-makeBuddies();
-
 // Part 5
 
 function beautifulStranger() {
@@ -143,9 +159,6 @@ function beautifulStranger() {
   var strider = rivendell.querySelectorAll('li')[3];
   strider.innerHTML = 'Aragorn';
 }
-
-beautifulStranger();
-
 
 // Part 6
 
@@ -156,9 +169,6 @@ function leaveTheShire() {
   var hobbits = shire.querySelector('ul');
   rivendell.appendChild(hobbits);
 }
-
-leaveTheShire();
-
 
 // Part 7
 
@@ -182,9 +192,6 @@ function forgeTheFellowShip() {
   rivendell.appendChild(theFellowship);
 }
 
-forgeTheFellowShip();
-
-
 // Part 8
 
 function theBalrog() {
@@ -196,9 +203,6 @@ function theBalrog() {
   gandalf.style.background = 'white';
   gandalf.style.border = '2px solid grey';
 }
-
-theBalrog();
-
 
 // Part 9
 
@@ -213,8 +217,6 @@ function hornOfGondor() {
   boromir.style.textDecoration = 'line-through';
   boromir.parentElement.removeChild(boromir);
 }
-
-hornOfGondor();
 
 // Part 10
 
@@ -236,9 +238,6 @@ function itsDangerousToGoAlone() {
   mordor.appendChild(mountDoom);
 }
 
-itsDangerousToGoAlone();
-
-
 // Part 11
 
 function weWantsIt() {
@@ -256,8 +255,6 @@ function weWantsIt() {
   gollum.appendChild(theRing);
   mountDoom.appendChild(gollum);
 }
-
-weWantsIt();
 
 // Part 12
 
@@ -280,5 +277,3 @@ function thereAndBackAgain() {
 
   gollum.parentElement.removeChild(gollum);
 }
-
-thereAndBackAgain();
