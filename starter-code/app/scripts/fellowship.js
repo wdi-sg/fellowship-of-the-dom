@@ -25,21 +25,50 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+  // document.createElement("section");
+  var createSection = document.createElement("section");
+  createSection.setAttribute("id", "middle-earth");
+
   // add each land as an article tag
+  for(var i = 0; i < lands.length; i++){
+    var addLand = document.createElement("article");
+
   // inside each article tag include an h1 with the name of the land
+    addLand.innerHTML = "<h1>" +lands[i]+ "</h1>";
   // append middle-earth to your document body
+    createSection.appendChild(addLand);
+  //body.appendChild(section);
+    body.appendChild(createSection);
+  }
 }
 
 makeMiddleEarth();
 
 
 // Part 2
+/*var theShire = getElementsByTagName("article")[0];
+var rivendell = getElementsByTagName("Article")[1];
+var modor = getElementsByTagName("Article")[2]; Y doesn't this work?*/
+var theShire = body.querySelectorAll("Article")[0];
+var rivendell = body.querySelectorAll("Article")[1];
+var modor = body.querySelectorAll("Article")[2];
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
-  // give each hobbit a class of hobbit
+  var hobbitsList = document.createElement("ul");
+  for(var i = 0; i < hobbits.length; i++){
+    var hobbit = document.createElement("li");
+    hobbit.innerHTML = hobbits[i];
+    // give each hobbit a class of hobbit
+
+    hobbit.setAttribute("class", "hobbit");
+
+    hobbitsList.appendChild(hobbit);
+  }
+  theShire.appendChild(hobbitsList);
 }
 
+makeHobbits();
 
 // Part 3
 
@@ -50,6 +79,7 @@ function keepItSecretKeepItSafe() {
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 }
 
+keepItSecretKeepItSafe();
 
 // Part 4
 
@@ -60,6 +90,7 @@ function makeBuddies() {
   // insert your aside as a child element of rivendell
 }
 
+makeBuddies();
 
 // Part 5
 
@@ -68,6 +99,7 @@ function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
 }
 
+beautifulStranger();
 
 // Part 6
 
