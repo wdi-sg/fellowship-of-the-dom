@@ -196,8 +196,21 @@ function forgeTheFellowShip() {
     //declaring class .hobbit to movehobbit to use array methods
     moveHobbit = document.querySelectorAll(".hobbit")
 
-    //relcating each hobbit from <aside> to <div>
+    // add each hobbit and buddy one at a time to 'the-fellowship'
+    //relocating each hobbit from <aside> to <div>
     moveHobbit.forEach(function(element, index){
+        var divInRivendell = document.querySelector("div#the-fellowship");
+        var name = element.textContent
+
+        console.log(name + " relocated to the fellowship!")
+        divInRivendell.appendChild(element);
+
+    });
+
+    //locate the buddies in array form
+    var buddiesInAside = document.querySelectorAll("aside ul");
+
+    buddiesInAside.forEach(function(element, index){
         var divInRivendell = document.querySelector("div#the-fellowship");
         var name = element.textContent
 
@@ -208,7 +221,6 @@ function forgeTheFellowShip() {
 
 
 
-  // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
 }
 
