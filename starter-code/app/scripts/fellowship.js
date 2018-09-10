@@ -137,7 +137,26 @@ function forgeTheFellowShip() {
     // create a new div called 'the-fellowship' within rivendell
     // add each hobbit and buddy one at a time to 'the-fellowship'
     // after each character is added make an alert that they have joined your party
+    var rivendell = document.querySelectorAll('article')[1]
+    var fellowship = document.createElement('div')
+    var newList = document.createElement('ul')
+    var oldList = document.querySelectorAll('ul')
+    //document.querySelectorAll('ul')[0].children[0].textContent
+
+    fellowship.setAttribute('id', 'the-fellowship')
+
+    for (i = oldList.length - 1; i >= 0; i--){
+        for(x = oldList[i].children.length - 1; x >= 0 ; x-- ) {
+            var transfer = oldList[i].children[x]
+            alert(oldList[i].children[x].textContent + ' has joined the party!')
+            newList.appendChild(transfer)
+        }
+    }
+    fellowship.appendChild(newList)
+    rivendell.appendChild(fellowship)
 }
+
+forgeTheFellowShip()
 
 
 // Part 8
