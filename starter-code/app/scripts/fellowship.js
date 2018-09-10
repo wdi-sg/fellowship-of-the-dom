@@ -231,10 +231,19 @@ forgeTheFellowShip();
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  var gandalf = document.querySelector("#the-fellowship ul:first-of-type")
+  gandalf.textContent = "Gandalf the White"
+
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.backgroundColor = "white";
+  gandalf.style.borderColor = "grey";
+
+
+
 }
 
+theBalrog()
 
 // Part 9
 
