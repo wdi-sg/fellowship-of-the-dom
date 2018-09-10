@@ -78,7 +78,7 @@ function keepItSecretKeepItSafe() {
   div1.id = "the-ring";
   // give the div a class of 'magic-imbued-jewelry'
   div1.className = "magic-imbued-jewelry";
-  console.log(div1);
+  //console.log(div1);
   // add the ring as a child of Frodo
   var frodo = document.getElementsByClassName("hobbit")[0];
   frodo.appendChild(div1);
@@ -91,14 +91,25 @@ keepItSecretKeepItSafe();
 
 
 // Part 4
-
-
 function makeBuddies() {
   // create an aside tag
+  var asideElem = document.createElement('aside');
   // attach an unordered list of the 'buddies' in the aside
+  var unordList2 = document.createElement('ul');
+  for (var i = 0; i < buddies.length; i++){
+    var list2 = document.createElement('li');
+    list2.textContent = buddies[i];
+    unordList2.appendChild(list2);
+  }
+  //console.log(unordList2);
+  asideElem.appendChild(unordList2);
+  //console.log(asideElem);
   // insert your aside as a child element of rivendell
+  var rivendell = document.getElementsByTagName("article")[1];
+  rivendell.appendChild(asideElem);
+  console.log(rivendell);
 }
-
+makeBuddies();
 
 // Part 5
 
