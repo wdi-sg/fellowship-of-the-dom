@@ -203,7 +203,7 @@ function itsDangerousToGoAlone(){
   var div3 = document.createElement('div');
   div3.id = "mount-doom";
   mordor.appendChild(div3);
-  console.log(mordor);
+  //console.log(mordor);
 }
 itsDangerousToGoAlone();
 
@@ -212,9 +212,26 @@ itsDangerousToGoAlone();
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  var mordor = document.getElementsByTagName('article')[2];
+  var div4 = document.createElement('div');
+  div4.id = "gollum";
+  //console.log(div4);
+  mordor.appendChild(div4);
+  //console.log(mordor);
   // Remove the ring from Frodo and give it to Gollum
+  var frodo = document.getElementById("the-ring");
+  frodo.removeAttribute("id");
+  //console.log(frodo);
+  var gollum = document.getElementById('gollum');
+  gollum.setAttribute("id", "the-ring");
+  mordor.appendChild(gollum);
+  console.log(mordor);
   // Move Gollum into Mount Doom
+  var mountDoom = document.getElementById("mount-doom");
+  mountDoom.appendChild(gollum);
+  console.log(mountDoom);
 }
+weWantsIt();
 
 
 // Part 12
