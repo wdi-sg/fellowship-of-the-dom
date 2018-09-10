@@ -126,19 +126,36 @@ beautifulStranger();
 
 function leaveTheShire() {
     var oldHobbits = document.querySelectorAll("ul")[0];
-    var hobbits = theShire.removeChild(oldHobbits); // can omit this line
+    var hobbits = theShire.removeChild(oldHobbits); // can instead omit this line
     Rivendell.appendChild(hobbits); // and just use oldHobbits here
 }
 leaveTheShire();
 
 // Part 7
 
-
-function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
+
+function forgeTheFellowShip() {
+    var fellowship = document.createElement("div");
+    fellowship.id = "the-fellowship";
+    Rivendell.appendChild(fellowship);
+
+    var fellowHobbits = document.querySelectorAll("ul .hobbit");
+    var fellowBuddies = document.querySelectorAll("aside li");
+// debugger; -why can I not use (i in fellowHobbits) for next line??
+    for (i = 0; i < fellowHobbits.length; i++) {
+        fellowship.appendChild(fellowHobbits[i]);
+        alert(`${fellowHobbits[i].textContent} has joined your party.`);
+    }
+    for (i = 0; i < fellowBuddies.length; i++) {
+        fellowship.appendChild(fellowBuddies[i]);
+        alert(`${fellowBuddies[i].textContent} has joined your party.`);
+    }
+
 }
+forgeTheFellowShip();
 
 
 // Part 8
