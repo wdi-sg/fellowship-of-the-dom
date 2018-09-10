@@ -219,14 +219,16 @@ function itsDangerousToGoAlone() {
     var content
 
     mountDoom.setAttribute('id', 'mount-doom')
+    mordor.appendChild(mountDoom)
 
     for (var i = target.length - 1; i >= 0; i--) {
         if (target[i].textContent == 'Frodo Baggins' || target[i].textContent == "Samwise 'Sam' Gamgee") {
             content = target[i]
-            console.log(content)
             mordor.firstChild.appendChild(content)
         }
     }
+
+
 }
 
 itsDangerousToGoAlone()
@@ -239,7 +241,29 @@ function weWantsIt() {
     // Create a div with an id of 'gollum' and add it to Mordor
     // Remove the ring from Frodo and give it to Gollum
     // Move Gollum into Mount Doom
+    var gollum = document.createElement('div')
+    var mordor = document.querySelectorAll('article')[2]
+    var mountDoom = document.getElementById('mount-doom')
+    gollum.setAttribute('id', 'gollum')
+    mordor.appendChild(gollum)
+
+    var ring = document.getElementById('the-ring')
+    var target = document.getElementsByTagName("li")
+    var content
+
+    for (var i = target.length - 1; i >= 0; i--) {
+        if (target[i].textContent == 'Frodo Baggins') {
+            content = target[i]
+            var removeRing = content.removeChild(ring)
+            gollum.appendChild(removeRing)
+        }
+    }
+    console.log(gollum)
+    mountDoom.appendChild(gollum)
+
 }
+
+weWantsIt()
 
 
 // Part 12
