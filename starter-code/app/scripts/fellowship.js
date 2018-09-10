@@ -163,9 +163,14 @@ forgeTheFellowShip();
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  var theWhite = document.getElementsByTagName("li")[4];
+  theWhite.textContent = "Gandalf the White";
   // apply style to the element
+  theWhite.style.border = "10px solid grey";
   // make the background 'white', add a grey border
+  theWhite.style.backgroundColor = "white";
 }
+theBalrog();
 
 
 // Part 9
