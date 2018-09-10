@@ -1,4 +1,5 @@
 
+
 // Dramatis Personae
 var hobbits = [
   'Frodo Baggins',
@@ -19,6 +20,8 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 var sectionOne = document.createElement('div');
 
+console.log(body);
+
 // Part 1
 
 function makeMiddleEarth() {
@@ -33,35 +36,53 @@ function makeMiddleEarth() {
     var sectionTwo = document.createElement("article");
 
     for(var i = 0; i < 3; i++) {
-        var articleDiv = document.createElement('article');
-        var pushInside = sectionOne.appendChild(articleDiv);
+        articleDiv = document.createElement('article');
+        pushInside = sectionOne.appendChild(articleDiv);
 
   // inside each article tag include an h1 with the name of the land
 
-        var createHeader = document.createElement('h1');
+    var h = document.createElement("h1");
+    var t = document.createTextNode('text');
+    h.appendChild(t);
+    document.body.appendChild(h);
 
-        createHeader.textContent = lands[i];
-        pushInside.appendChild(createHeader);
 
+    t.textContent = lands[i];
+
+        pushInside.appendChild(h);
     }
   // append middle-earth to your document body
 
     body.appendChild(sectionOne);
 };
 
-//console.log(body);
-
 makeMiddleEarth();
 
-
 // Part 2
-
+// display an unordered list of hobbits in the shire (which is the second article tag on the page)
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the second article tag on the page)
-  // give each hobbit a class of hobbit
-}
 
+    unorderedList = document.createElement('ul');
 
+        for(var i = 0; i < hobbits.length; i++) {
+            a = document.getElementsByTagName("article");
+
+            pushInsideTwo = a[0].appendChild(unorderedList);
+
+            listOfHobbits = document.createElement('li');
+
+            hobbets = unorderedList.appendChild(listOfHobbits);
+
+            hobbets.textContent = hobbits[i];
+
+// give each hobbit a class of hobbit
+
+        listOfHobbits.classList.add("hobbit");
+
+        }
+};
+
+makeHobbits();
 // Part 3
 
 function keepItSecretKeepItSafe() {
