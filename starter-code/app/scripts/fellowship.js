@@ -145,8 +145,8 @@ function forgeTheFellowShip() {
 
     fellowship.setAttribute('id', 'the-fellowship')
 
-    for (i = oldList.length - 1; i >= 0; i--){
-        for(x = oldList[i].children.length - 1; x >= 0 ; x-- ) {
+    for (i = oldList.length - 1; i >= 0; i--) {
+        for (x = oldList[i].children.length - 1; x >= 0; x--) {
             var transfer = oldList[i].children[x]
             alert(oldList[i].children[x].textContent + ' has joined the party!')
             newList.appendChild(transfer)
@@ -166,18 +166,18 @@ function theBalrog() {
     // change the 'Gandalf' textNode to 'Gandalf the White'
     // apply style to the element
     // make the background 'white', add a grey border
-        var target = document.getElementsByTagName("li")
-        var searchText = "Gandalf the Grey"
-        var content
+    var target = document.getElementsByTagName("li")
+    var searchText = "Gandalf the Grey"
+    var content
 
-        for (var i = 0; i < target.length; i++) {
-            if (target[i].textContent == searchText) {
-                content = target[i]
-                content.textContent = 'Gandalf the White'
-                content.style.background = 'white'
-                content.style.border = '1px solid grey'
-            }
+    for (var i = 0; i < target.length; i++) {
+        if (target[i].textContent == searchText) {
+            content = target[i]
+            content.textContent = 'Gandalf the White'
+            content.style.background = 'white'
+            content.style.border = '1px solid grey'
         }
+    }
 }
 
 theBalrog()
@@ -190,7 +190,22 @@ function hornOfGondor() {
     // Boromir's been killed by the Uruk-hai!
     // put a linethrough on boromir's name
     // Remove Boromir from the Fellowship
+    alert("Horn of Gondor has been blown! Boromir's been killed by the Uruk-hai!")
+    var fellowship = document.getElementById('the-fellowship')
+    var target = document.getElementsByTagName("li")
+    var searchText = "Boromir"
+    var content
+
+    for (var i = 0; i < target.length; i++) {
+        if (target[i].textContent == searchText) {
+            content = target[i]
+            content.style.textDecoration = 'line-through'
+            fellowship.firstChild.removeChild(content)
+        }
+    }
 }
+
+hornOfGondor()
 
 
 // Part 10
