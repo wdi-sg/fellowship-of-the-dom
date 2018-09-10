@@ -116,7 +116,7 @@ function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
   var aragorn = document.getElementsByTagName("li")[7];//7 is strider in the list.
   aragorn.textContent = "Aragorn";
-  console.log(aragorn);
+  //console.log(aragorn);
   // aragorn
 
 }
@@ -126,7 +126,13 @@ beautifulStranger();
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  var assemble = document.querySelector(".hobbit");
+  console.log(assemble);
+  var rivendell = document.getElementsByTagName("article")[1];
+  rivendell.appendChild(assemble);
+  console.log(rivendell);
 }
+leaveTheShire();
 
 
 // Part 7
