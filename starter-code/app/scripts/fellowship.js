@@ -166,7 +166,21 @@ function theBalrog() {
     // change the 'Gandalf' textNode to 'Gandalf the White'
     // apply style to the element
     // make the background 'white', add a grey border
+        var target = document.getElementsByTagName("li")
+        var searchText = "Gandalf the Grey"
+        var content
+
+        for (var i = 0; i < target.length; i++) {
+            if (target[i].textContent == searchText) {
+                content = target[i]
+                content.textContent = 'Gandalf the White'
+                content.style.background = 'white'
+                content.style.border = '1px solid grey'
+            }
+        }
 }
+
+theBalrog()
 
 
 // Part 9
