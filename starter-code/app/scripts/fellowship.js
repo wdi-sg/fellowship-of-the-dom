@@ -18,6 +18,7 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
+var ringClicked = 0;
 
 
 // Part 1
@@ -81,6 +82,17 @@ function keepItSecretKeepItSafe() {
   span.appendChild(text);
 
   var fade = function () {
+    var end = document.createElement('p');
+    var html = document.querySelector('html');
+    var body = document.querySelector('body');
+
+    ringClicked++;
+    if (ringClicked === 3) {
+      html.removeChild(body);
+      end.innerHTML = 'The Ring has been returned to Sauron and the world is over.';
+      html.appendChild(end);
+    }
+
     span.className = '';
     span.classList.add('hide');
 
