@@ -18,10 +18,9 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
+var ringClicked = 0;
 
 // Part 1
-
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
@@ -42,9 +41,6 @@ function makeMiddleEarth() {
   document.body.appendChild(middleEarth);
 }
 
-makeMiddleEarth();
-
-
 // Part 2
 
 function makeHobbits() {
@@ -62,9 +58,6 @@ function makeHobbits() {
   theShire.appendChild(ulHobbits);
 }
 
-makeHobbits();
-
-
 // Part 3
 
 function keepItSecretKeepItSafe() {
@@ -78,13 +71,31 @@ function keepItSecretKeepItSafe() {
   theRing.classList.add("magic-imbued-jewelry");
   var frodo = document.querySelectorAll(".hobbit")[0];
   frodo.appendChild(theRing);
-  theRing.addEventListener('click',nazgulScreech);
+  theRing.addEventListener('click', nazgulScreech);
+  theRing.addEventListener('click', fade);
 }
 
-keepItSecretKeepItSafe();
+// Bonus: Within the click listener for clicking '#the-ring', add functionality
+// so that when it's clicked, it not only calls nazgulScreech but also causes
+// Frodo's opacity to go down to 0 for a while, only to fade back in.
+// If the ring is clicked three times, the entire body element should disappear,
+// to be replaced with the text "The Ring has been returned to Sauron and the world is over."
+
+var fade = function () {
+  var ringOwner = document.getElementById("the-ring").parentNode;
+  ringOwner.style.opacity = 0;
+  ringOwner.style.transition = "opacity 2s ease-in-out";
+  var fadeBackIn = setTimeout(function () {
+    ringOwner.style.opacity = 1;
+  }, 2000);
+  ringClicked++;
+
+  if (ringClicked >= 3) {
+    document.body.innerHTML="The Ring has been returned to Sauron and the world is over.";
+  }
+}
 
 // Part 4
-
 
 function makeBuddies() {
   // create an aside tag
@@ -96,7 +107,6 @@ function makeBuddies() {
   for (i in buddies) {
     var newElement = document.createElement("li");
     newElement.innerText = buddies[i];
-    newElement.classList.add("buddy");
     ulBuddies.appendChild(newElement);
   }
   asideBuddies.appendChild(ulBuddies);
@@ -104,7 +114,6 @@ function makeBuddies() {
   rivendell.appendChild(asideBuddies);
 }
 
-makeBuddies();
 
 // Part 5
 
@@ -119,8 +128,6 @@ function beautifulStranger() {
   }
 }
 
-beautifulStranger();
-
 // Part 6
 
 function leaveTheShire() {
@@ -128,14 +135,10 @@ function leaveTheShire() {
   var theShire = document.querySelectorAll("article")[0];
   var rivendell = document.querySelectorAll("article")[1];
   var ulHobbits = document.getElementsByTagName("ul")[0];
-  theShire.removeChild(ulHobbits);
   rivendell.appendChild(ulHobbits);
 }
 
-leaveTheShire();
-
 // Part 7
-
 
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
@@ -147,26 +150,15 @@ function forgeTheFellowShip() {
   var rivendell = document.querySelectorAll("article")[1];
   rivendell.appendChild(theFellowship);
 
-  var inHobbits = document.querySelectorAll(".hobbit");
-  for (i = 0; i < inHobbits.length; i++) {
-    newElement = document.querySelector(".hobbit");
-    var ulHobbits = document.getElementsByTagName("ul")[1];
-    ulHobbits.removeChild(newElement);
+  var fellowshipList = rivendell.querySelectorAll("li");
+  for (i = 0; i < fellowshipList.length; i++) {
+    newElement = fellowshipList[i];
     alert(`${newElement.textContent} has joined the party!`);
     theFellowship.appendChild(newElement);
   }
 
-  var inBuddies = document.querySelectorAll(".buddy");
-  for (i = 0; i < inBuddies.length; i++) {
-    newElement = document.querySelector(".buddy");
-    var ulBuddies = document.getElementsByTagName("ul")[0];
-    ulBuddies.removeChild(newElement);
-    alert(`${newElement.textContent} has joined the party!`);
-    theFellowship.appendChild(newElement);
-  }
+  //two blank uls left inside
 }
-
-forgeTheFellowShip();
 
 
 // Part 8
@@ -176,8 +168,12 @@ function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-}
 
+  gandalf = document.body.querySelector("li");
+  gandalf.textContent = "Gandalf the White";
+  gandalf.style.backgroundColor = "white";
+  gandalf.style.border = "2px solid grey";
+}
 
 // Part 9
 
@@ -186,6 +182,11 @@ function hornOfGondor() {
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
+
+  boromir = document.body.querySelectorAll("li")[4];
+  boromir.style.textDecoration = "line-through";
+  fellowship = document.getElementById("the-fellowship");
+  fellowship.removeChild(boromir);
 }
 
 
@@ -194,6 +195,15 @@ function hornOfGondor() {
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
+  fellowship = document.querySelectorAll("li");
+  frodo = fellowship[4];
+  sam = fellowship[5];
+  var mordor = document.querySelectorAll("article")[2];
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
+  var mountDoom = document.createElement("div");
+  mountDoom.id = "mount-doom";
+  mordor.appendChild(mountDoom);
 }
 
 
@@ -203,8 +213,13 @@ function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
+  var gollum = document.createElement("div");
+  gollum.id = "gollum";
+  var theRing = document.getElementById("the-ring");
+  gollum.appendChild(theRing);
+  var mountDoom = document.getElementById("mount-doom");
+  mountDoom.appendChild(gollum);
 }
-
 
 // Part 12
 
@@ -212,4 +227,29 @@ function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+  var theRing = document.getElementById("the-ring");
+  var gollum = document.getElementById("gollum");
+  var mountDoom = document.getElementById("mount-doom");
+  gollum.removeChild(theRing);
+  mountDoom.removeChild(gollum);
+  var hobbitses = document.querySelectorAll(".hobbit");
+  var theShire = document.querySelector("article");
+  for (var i = 0; i < hobbitses.length; i++) {
+    theShire.appendChild(hobbitses[i]);
+  }
 }
+
+//Bonus: Delay each step with a setTimeout, so that the DOM manipulation can be seen clearly.
+
+makeMiddleEarth();
+setTimeout(makeHobbits, 2000);
+setTimeout(keepItSecretKeepItSafe, 4000);
+setTimeout(makeBuddies, 6000);
+setTimeout(beautifulStranger, 8000);
+setTimeout(leaveTheShire, 10000);
+setTimeout(forgeTheFellowShip, 12000);
+setTimeout(theBalrog, 14000);
+setTimeout(hornOfGondor, 16000);
+setTimeout(itsDangerousToGoAlone, 18000);
+setTimeout(weWantsIt, 20000);
+setTimeout(thereAndBackAgain, 22000);
