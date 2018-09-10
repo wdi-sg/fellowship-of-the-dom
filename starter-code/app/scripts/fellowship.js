@@ -41,10 +41,8 @@ function makeMiddleEarth() {
         newArticle.appendChild(newh1);
         newSection.appendChild(newArticle);
     }
-
     document.body.appendChild(newSection);
 }
-
 makeMiddleEarth();
 
 
@@ -57,16 +55,20 @@ function makeHobbits() {
 
     for (i in hobbits) {
         var newHobbit = document.createElement("li");
+        newHobbit.classList.add("hobbit");
         newHobbit.textContent = hobbits[i];
         document.querySelectorAll("article")[0].appendChild(newHobbit);
     }
-
 }
-
 makeHobbits();
 
 
 // Part 3
+
+  // create a div with an id of 'the-ring'
+  // give the div a class of 'magic-imbued-jewelry'
+  // add the ring as a child of Frodo
+  // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 
 function keepItSecretKeepItSafe() {
 
@@ -76,32 +78,37 @@ function keepItSecretKeepItSafe() {
     document.querySelectorAll("li")[0].appendChild(newDivRing);
 
     document.getElementById("the-ring").addEventListener("click", nazgulScreech);
-
-  // create a div with an id of 'the-ring'
-  // give the div a class of 'magic-imbued-jewelry'
-  // add the ring as a child of Frodo
-  // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 }
-
 keepItSecretKeepItSafe();
 
 // Part 4
 
-
-function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-}
 
+function makeBuddies() {
+
+    var newAside = document.createElement("aside");
+
+    for (i in buddies) {
+        var newBuddy = document.createElement("li");
+        newBuddy.textContent = buddies[i];
+        newAside.appendChild(newBuddy);
+    }
+
+    document.querySelectorAll("article")[1].appendChild(newAside);
+}
+makeBuddies();
 
 // Part 5
 
+  // change the 'Strider' textnode to 'Aragorn'
 
 function beautifulStranger() {
-  // change the 'Strider' textnode to 'Aragorn'
+    document.querySelectorAll("aside li")[3].textContent = "Aragorn";
 }
-
+beautifulStranger();
 
 // Part 6
 
