@@ -107,17 +107,20 @@ function makeBuddies() {
   // insert your aside as a child element of rivendell
   var rivendell = document.getElementsByTagName("article")[1];
   rivendell.appendChild(asideElem);
-  console.log(rivendell);
+  //console.log(rivendell);
 }
 makeBuddies();
 
 // Part 5
-
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-}
+  var aragorn = document.getElementsByTagName("li")[7];//7 is strider in the list.
+  aragorn.textContent = "Aragorn";
+  console.log(aragorn);
+  // aragorn
 
+}
+beautifulStranger();
 
 // Part 6
 
