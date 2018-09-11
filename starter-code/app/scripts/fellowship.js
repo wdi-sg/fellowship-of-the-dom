@@ -19,16 +19,16 @@ var buddies = [
 var functions = [
   makeMiddleEarth,
   makeHobbits,
-  keepItSecretKeepItSafe,
-  makeBuddies,
-  beautifulStranger,
-  leaveTheShire,
-  forgeTheFellowShip,
-  theBalrog,
-  hornOfGondor,
-  itsDangerousToGoAlone,
-  weWantsIt,
-  thereAndBackAgain
+  keepItSecretKeepItSafe
+  // makeBuddies,
+  // beautifulStranger,
+  // leaveTheShire,
+  // forgeTheFellowShip,
+  // theBalrog,
+  // hornOfGondor,
+  // itsDangerousToGoAlone,
+  // weWantsIt,
+  // thereAndBackAgain
 ];
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
@@ -45,7 +45,7 @@ window.onload = function () {
     if (i === functions.length) {
       clearInterval(timer);
     }
-  }, 3000);
+  }, 10);
 };
 
 // Part 1
@@ -114,11 +114,15 @@ function keepItSecretKeepItSafe() {
       html.appendChild(end);
     }
 
-    span.className = '';
-    span.classList.add('hide');
-
+    span.style.opacity = 0;
     setTimeout(function () {
-      span.classList.add('fade-in');
+      var timer = setInterval(function () {
+        // span.style.opacity is a string.
+        span.style.opacity = parseFloat(span.style.opacity) + 0.01;
+        if (parseFloat(span.style.opacity) >= 1) {
+          clearInterval(timer);
+        }
+      }, 10);
     }, 2000);
   };
 
