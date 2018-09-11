@@ -1,6 +1,6 @@
 console.log("Linked.");
 
-// Dramatis Personae
+// Dramatis Personaelen
 var hobbits = [
   'Frodo Baggins',
   'Samwise \'Sam\' Gamgee',
@@ -25,49 +25,85 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+  var middleEarth = document.createElement('section');
+  for (var i = 0; i < lands.length; i++) {
   // add each land as an article tag
+  var land = document.createElement('article');
   // inside each article tag include an h1 with the name of the land
+  land.innerHTML = '<h1>' + lands[i] + '</h1>';
   // append middle-earth to your document body
+  middleEarth.appendChild(land);
+  body.appendChild(middleEarth);
 }
 
 makeMiddleEarth();
 
 
 // Part 2
+var shire = body.querySelector("article");
+var hobbitFactory = document.createElement("ul");
 
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the second article tag on the page)
+// display an unordered list of hobbits in the shire (which is the second article tag on the page)
+for (var j = 0, j < hobbits.length, j++);
+  var joinHobbit = document.createElement("li");
+        joinHobbit.textContent = hobbits[j];
+        joinHobbit.className = "hobbit";
+
+        hobbitFactory.appendChild(joinHobbit);
+
+        shire.appendChild(hobbitFactory);
+      }
+  }
+
+makeHobbits();
   // give each hobbit a class of hobbit
-}
+
+
 
 
 // Part 3
-
-function keepItSecretKeepItSafe() {
+  var frodo = body.querySelector("li");
+  function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var theRing = document.createElement("div");
+  theRing.setAttribute("id", "the-ring");
   // give the div a class of 'magic-imbued-jewelry'
+  theRing.setAttribute("class", "magic-imbued-jewelry");
+  // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  theRing.addEventListener("click", nazgulScreech);
   // add the ring as a child of Frodo
-  // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  frodo.appendChild(theRing);
 }
 
+keepItSecretKeepItSafe();
 
 // Part 4
-
+var rivendell = body.querySelectorAll("article")[1];
+var buddy = document.createElement("ul");
 
 function makeBuddies() {
   // create an aside tag
+  var aside = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
+  for (k = 0; k < buddies.length; k++) {
+    var joinBuddy = document.createElement("li");
+    joinBuddy.textContent = buddies[k];
+    buddy.appendChild(joinBuddy);
+    aside.appendChild(buddy);
+  }
   // insert your aside as a child element of rivendell
+  rivendell.appendChild(aside);
 }
 
+makeBuddies();
 
 // Part 5
-
+var strider = body.querySelectorAll("li")[7];
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-}
-
+} strider.textContent = "Aragorn";
 
 // Part 6
 
