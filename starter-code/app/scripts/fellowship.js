@@ -19,16 +19,16 @@ var buddies = [
 var functions = [
   makeMiddleEarth,
   makeHobbits,
-  keepItSecretKeepItSafe
-  // makeBuddies,
-  // beautifulStranger,
-  // leaveTheShire,
-  // forgeTheFellowShip,
-  // theBalrog,
-  // hornOfGondor,
-  // itsDangerousToGoAlone,
-  // weWantsIt,
-  // thereAndBackAgain
+  keepItSecretKeepItSafe,
+  makeBuddies,
+  beautifulStranger,
+  leaveTheShire,
+  forgeTheFellowShip,
+  theBalrog,
+  hornOfGondor,
+  itsDangerousToGoAlone,
+  weWantsIt,
+  thereAndBackAgain
 ];
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
