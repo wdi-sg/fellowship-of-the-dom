@@ -167,6 +167,7 @@ function forgeTheFellowShip() {
 
     var rivendell = document.querySelectorAll('article')[1];
     var fellowship = document.createElement("div");
+
     fellowship.classList.add("the-fellowship");
     var hobbitBuddies = document.querySelectorAll('li');
 
@@ -189,7 +190,9 @@ function theBalrog() {
     // change the 'Gandalf' textNode to 'Gandalf the White'
     // apply style to the element
     // make the background 'white', add a grey border
+
     var gandalf = document.querySelector('li');
+
     gandalf.textContent = "Gandalf the White";
     gandalf.style = "background-color:white; border:3px solid grey;"
 }
@@ -207,8 +210,8 @@ function hornOfGondor() {
     alert("The horn of gondor has been blown!");
     alert("Boromir's been killed by the Uruk-hai!");
     var boromir = document.querySelector('li:nth-child(5)');
+
     boromir.style = "text-decoration: line-through;"
-    var ship = document.getElementsByClassName('the-fellowship');
     boromir.parentNode.removeChild(boromir);
 }
 
@@ -222,14 +225,13 @@ function itsDangerousToGoAlone() {
 
     var frodo = document.getElementsByClassName('hobbit')[0];
     var sam = document.getElementsByClassName('hobbit')[1];
-    var moveFrodo = frodo.parentNode.removeChild(frodo);
-    var moveSam = sam.parentNode.removeChild(sam);
     var modor = document.querySelectorAll('article')[2];
 
-    modor.appendChild(moveFrodo);
-    modor.appendChild(moveSam);
+    modor.appendChild(frodo);
+    modor.appendChild(sam);
 
     var mountdoom = document.createElement('div');
+
     mountdoom.setAttribute('id', 'mount-doom');
     modor.appendChild(mountdoom);
 
@@ -245,12 +247,12 @@ function weWantsIt() {
 
     var gollumDiv = document.createElement("div");
     gollumDiv.setAttribute('id', 'gollum');
+
     var ringDiv = document.getElementById('the-ring');
-    var ring = ringDiv.parentNode.removeChild(ringDiv);
     var mountdoom = document.getElementById('mount-doom');
 
     mountdoom.appendChild(gollumDiv);
-    gollumDiv.appendChild(ring);
+    gollumDiv.appendChild(ringDiv);
 
 }
 
@@ -264,6 +266,7 @@ function thereAndBackAgain() {
     var gollumDiv = document.getElementById('gollum');
     var ringDiv = document.getElementById('the-ring');
     var mountdoom = document.getElementById('mount-doom');
+
     gollumDiv.removeChild(ringDiv);
     mountdoom.removeChild(gollumDiv);
 
