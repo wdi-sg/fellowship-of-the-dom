@@ -33,7 +33,7 @@ function makeMiddleEarth() {
     var addLand = document.createElement("article");
   // inside each article tag include an h1 with the name of the land
     var header1 = document.createElement("h1");
-    header1.textContent = lands[i];
+    header1.textContent = lands[i]; //textContent came out as text only, unlike innerHTML -> which comes out as HTML elements, which can be styled
     //console.log(header1);
     addLand.appendChild(header1);
     //console.log(addLand);
@@ -129,7 +129,7 @@ function leaveTheShire() {
   //console.log(assemble);
   var rivendell = document.getElementsByTagName("article")[1];
   rivendell.appendChild(assemble);
-  console.log(rivendell);
+  //console.log(rivendell);
 }
 leaveTheShire();
 
@@ -143,7 +143,7 @@ function forgeTheFellowShip() {
   div2.id = "the-fellowship";
   var rivendell = body.querySelectorAll('article')[1];
   rivendell.appendChild(div2);
-  console.log(rivendell);
+  //console.log(rivendell);
   // add each hobbit and buddy one at a time to 'the-fellowship'
   var hobbitList = document.getElementsByTagName("ul")[1];
   var party = document.getElementsByTagName("div")[2];
@@ -223,8 +223,8 @@ function weWantsIt() {
   frodo.removeAttribute("id");
   //console.log(frodo);
   var gollum = document.getElementById('gollum');
-  gollum.setAttribute("id", "the-ring");
   mordor.appendChild(gollum);
+  gollum.setAttribute("id", "the-ring");
   console.log(mordor);
   // Move Gollum into Mount Doom
   var mountDoom = document.getElementById("mount-doom");
@@ -238,6 +238,21 @@ weWantsIt();
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+  var parOfGollum = document.getElementById("mount-doom");
+  var theRing = document.getElementById("the-ring");
+  parOfGollum.removeChild(theRing);
+
+  //console.log(parOfGollum);
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+  var theShire = document.getElementsByTagName('article')[0];
+  var theShireUl = document.createElement("ul");
+  //console.log(theShire);
+  var hobbits = document.getElementsByClassName("hobbit");
+  for (var i = 0 ; i < hobbits.length; i++){
+    theShireUl.appendChild(hobbits[i]);
+    theShire.appendChild(theShireUl);
+  }
+  console.log(theShire);
 }
+thereAndBackAgain();
