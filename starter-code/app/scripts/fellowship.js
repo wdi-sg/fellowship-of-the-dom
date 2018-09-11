@@ -147,11 +147,11 @@ function forgeTheFellowShip() {
 // debugger; -why can I not use (i in fellowHobbits) for next line??
     for (i = 0; i < fellowHobbits.length; i++) {
         fellowship.appendChild(fellowHobbits[i]);
-        alert(`${fellowHobbits[i].textContent} has joined your party.`);
+        // alert(`${fellowHobbits[i].textContent} has joined your party.`);
     }
     for (i = 0; i < fellowBuddies.length; i++) {
         fellowship.appendChild(fellowBuddies[i]);
-        alert(`${fellowBuddies[i].textContent} has joined your party.`);
+        // alert(`${fellowBuddies[i].textContent} has joined your party.`);
     }
 
 }
@@ -160,45 +160,96 @@ forgeTheFellowShip();
 
 // Part 8
 
-
-function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-}
 
+function theBalrog() {
+
+    var gandalf = document.querySelectorAll("#the-fellowship li")[4];
+    gandalf.textContent = "Gandalf the White";
+    gandalf.style.background = "white";
+    gandalf.style.border = "grey";
+}
+theBalrog();
 
 // Part 9
 
-function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
-}
 
+function hornOfGondor() {
+    alert("The horn of Gondor has been blown.")
+    var boromir = document.querySelectorAll("#the-fellowship li")[8];
+    boromir.style.textDecoration = "line-through";
+    document.querySelector("#the-fellowship").removeChild(boromir);
+}
+hornOfGondor();
 
 // Part 10
 
-function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
-}
 
+function itsDangerousToGoAlone(){
+    var frodo = document.querySelectorAll("#the-fellowship li")[0];
+    var sam = document.querySelectorAll("#the-fellowship li")[1];
+
+    Mordor.appendChild(frodo);
+    Mordor.appendChild(sam);
+
+    var newDiv = document.createElement("div");
+    newDiv.id = "mount-doom";
+    Mordor.appendChild(newDiv);
+}
+itsDangerousToGoAlone();
 
 // Part 11
 
-function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-}
 
+function weWantsIt() {
+    var gollum = document.createElement("div");
+    gollum.id = "gollum";
+    Mordor.appendChild(gollum);
+
+    var theRing = document.querySelector("#the-ring");
+
+    gollum.appendChild(theRing);
+    document.querySelector("#mount-doom").appendChild(gollum);
+}
+weWantsIt();
 
 // Part 12
 
-function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+
+function thereAndBackAgain() {
+    var gollum = document.querySelector("#gollum");
+    var mtdoom = document.querySelector("#mount-doom");
+
+    mtdoom.removeChild(gollum);
+
+    var hobbitses = document.querySelectorAll(".hobbit");
+
+    for (i = 0; i < hobbitses.length; i++) {
+        theShire.appendChild(hobbitses[i]);
+    }
 }
+thereAndBackAgain();
+
+
+
+
+
+
+
+
+
+
