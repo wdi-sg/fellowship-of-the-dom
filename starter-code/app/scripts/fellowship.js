@@ -128,24 +128,36 @@ function leaveTheShire() {
 leaveTheShire();
 
 // Part 7
-
-
+fellowshipList = document.querySelectorAll("li");
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var theFellowship = document.createElement("div");
+   theFellowship.getAttribute("id", "the-fellowship");
   // add each hobbit and buddy one at a time to 'the-fellowship'
+  for(var i = 0; i < fellowshipList.length; i++){
+      theFellowship.appendChild(fellowshipList[i]);
+      //alert(fellowshipList[i].textContent + "has joined your party!");
+  }
+
   // after each character is added make an alert that they have joined your party
+  rivendell.appendChild(theFellowship)
 }
 
+forgeTheFellowShip();
 
 // Part 8
 
-
+var gandalf = fellowshipList[0];
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  gandalf.textContent = "Gandalf the White";
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.background = "white";
+  gandalf.style.border = "2px solid grey";
 }
 
+theBalrog();
 
 // Part 9
 
