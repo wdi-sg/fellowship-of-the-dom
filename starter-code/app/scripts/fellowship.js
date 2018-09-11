@@ -45,7 +45,7 @@ window.onload = function () {
     if (i === functions.length) {
       clearInterval(timer);
     }
-  }, 10);
+  }, 3000);
 };
 
 // Part 1
