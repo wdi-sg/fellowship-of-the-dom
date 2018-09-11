@@ -66,13 +66,29 @@ function makeHobbits() {
 }
 makeHobbits();
 
-
 // Part 3
 
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
   // add the ring as a child of Frodo
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+
+  // Within the click listener for clicking `'#the-ring'`, add functionality so that when it's clicked,
+  // it not only calls `nazgulScreech` but also causes Frodo's opacity to go down to 0 for a while, only to fade back in.
+
+document.querySelectorAll(".hobbit")[0].id = "frodo";
+
+function fadeFrodo() {
+    var frodo = document.querySelector("#frodo");
+    frodo.style = "opacity:0;transition: opacity 1s ease-in-out";
+
+    function frodoFadeIn() {
+        frodo.style = "opacity:1;transition: opacity 1s ease-in-out";
+    }
+
+    setTimeout(frodoFadeIn, 1250);
+}
+
 
 function keepItSecretKeepItSafe() {
 
@@ -81,7 +97,10 @@ function keepItSecretKeepItSafe() {
     newDivRing.classList.add("magic-imbued-jewelry");
     document.querySelectorAll("li")[0].appendChild(newDivRing);
 
-    document.getElementById("the-ring").addEventListener("click", nazgulScreech);
+    document.getElementById("the-ring").addEventListener("click", function() {
+        nazgulScreech();
+        fadeFrodo();
+        })
 }
 keepItSecretKeepItSafe();
 
@@ -90,7 +109,6 @@ keepItSecretKeepItSafe();
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-
 
 var theShire = document.querySelectorAll("article")[0];
 var Rivendell = document.querySelectorAll("article")[1];
@@ -242,7 +260,15 @@ function thereAndBackAgain() {
         theShire.appendChild(hobbitses[i]);
     }
 }
-thereAndBackAgain();
+//thereAndBackAgain();
+
+
+// If the ring is clicked three times, the entire body element should disappear,
+// to be replaced with the text "The Ring has been returned to Sauron and the world is over."
+
+
+
+// Delay each step with a `setTimeout`, so that the DOM manipulation can be seen clearly.
 
 
 
