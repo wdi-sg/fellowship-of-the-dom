@@ -84,29 +84,21 @@ setTimeout(function keepItSecretKeepItSafe() {
   var frodo = document.querySelectorAll(".hobbit")[0];
   frodo.appendChild(theRing);
 
+  var fadeIn = function() {
+    frodo.style="opacity: 1; transition: opacity 0.25s ease-in-out";
+  }
+
+  var fadeOut = function() {
+    frodo.style="opacity: 0; transition: opacity 0.25s ease-in-out";
+  }
+
   theRing.addEventListener("click", nazgulScreech);
-  // theRing.addEventListener("click", function(){
+  theRing.addEventListener("click", function(){
 
-  //   frodo.style.opacity = 1;
-  //   var fadeOut = setInterval( function() {
+    fadeOut();
+    setTimeout(fadeIn, 1000);
 
-  //       if ( frodo.style.opacity < 0.1) {
-
-  //           clearInterval(fadeOut);
-  //       }
-
-  //       frodo.style.opacity -= 0.1}, 100);
-
-  //   var fadeIn = setInterval( function() {
-
-  //       if (frodo.style.opacity > 0.9) {
-
-  //           clearInterval(fadeIn);
-  //       }
-
-  //       frodo.style.opacity += 0.1}, 100);
-
-  // });
+  });
 
   theRing.addEventListener("click", function() {
 
@@ -127,176 +119,176 @@ setTimeout(function keepItSecretKeepItSafe() {
 // Part 4
 
 
-setTimeout(function makeBuddies() {
-  // create an aside tag
-  // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
-  var side = document.createElement("aside");
-  var buddiesList = document.createElement("ul");
+// setTimeout(function makeBuddies() {
+//   // create an aside tag
+//   // attach an unordered list of the 'buddies' in the aside
+//   // insert your aside as a child element of rivendell
+//   var side = document.createElement("aside");
+//   var buddiesList = document.createElement("ul");
 
-  for (var i = 0; i < buddies.length; i++) {
+//   for (var i = 0; i < buddies.length; i++) {
 
-    var list = document.createElement("li");
-    list.setAttribute("id", buddies[i]);
-    list.setAttribute("class", "buddies");
-    list.textContent = buddies[i];
-    buddiesList.appendChild(list);
-  }
+//     var list = document.createElement("li");
+//     list.setAttribute("id", buddies[i]);
+//     list.setAttribute("class", "buddies");
+//     list.textContent = buddies[i];
+//     buddiesList.appendChild(list);
+//   }
 
-  side.appendChild(buddiesList);
+//   side.appendChild(buddiesList);
 
-  var rivendell = document.getElementsByTagName("article")[1];
-  rivendell.appendChild(side);
+//   var rivendell = document.getElementsByTagName("article")[1];
+//   rivendell.appendChild(side);
 
-}, 7000);
+// }, 7000);
 
-// Part 5
-
-
-setTimeout(function beautifulStranger() {
-  // change the 'Strider' textnode to 'Aragorn'
-
-  var strider = document.querySelectorAll("aside ul li")[3];
-  strider.textContent = "Aragorn";
-
-}, 9000);
-
-// Part 6
-
-setTimeout(function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
-  var shireRemove = document.getElementsByTagName("article")[0];
-  var hobbitsMove = document.getElementsByTagName("ul")[0];
-  var rivendellAppend = document.getElementsByTagName("article")[1];
-  rivendellAppend.appendChild(hobbitsMove);
-
-}, 11000);
+// // Part 5
 
 
-// Part 7
+// setTimeout(function beautifulStranger() {
+//   // change the 'Strider' textnode to 'Aragorn'
+
+//   var strider = document.querySelectorAll("aside ul li")[3];
+//   strider.textContent = "Aragorn";
+
+// }, 9000);
+
+// // Part 6
+
+// setTimeout(function leaveTheShire() {
+//   // assemble the hobbits and move them to Rivendell
+//   var shireRemove = document.getElementsByTagName("article")[0];
+//   var hobbitsMove = document.getElementsByTagName("ul")[0];
+//   var rivendellAppend = document.getElementsByTagName("article")[1];
+//   rivendellAppend.appendChild(hobbitsMove);
+
+// }, 11000);
 
 
-setTimeout(function forgeTheFellowShip() {
-  // create a new div called 'the-fellowship' within rivendell
-  // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
-  var rivendell = document.getElementsByTagName("article")[1];
-  var party = document.createElement("div");
-  party.setAttribute("id", "the-fellowship");
-  var list = document.createElement("ul");
-  party.appendChild(list);
-  rivendell.appendChild(party);
-
-  var allCharacters = document.getElementsByTagName("li");
-
-  for (var i = 0; i < allCharacters.length; i++) {
+// // Part 7
 
 
-    allCharacters[i].addEventListener("click", function(){
+// setTimeout(function forgeTheFellowShip() {
+//   // create a new div called 'the-fellowship' within rivendell
+//   // add each hobbit and buddy one at a time to 'the-fellowship'
+//   // after each character is added make an alert that they have joined your party
+//   var rivendell = document.getElementsByTagName("article")[1];
+//   var party = document.createElement("div");
+//   party.setAttribute("id", "the-fellowship");
+//   var list = document.createElement("ul");
+//   party.appendChild(list);
+//   rivendell.appendChild(party);
 
-        list.appendChild(this);
-        alert(this.textContent + " have joined the party");
-    });
+//   var allCharacters = document.getElementsByTagName("li");
 
-  }
-
-}, 13000);
-
-// Part 8
-
-
-setTimeout(function theBalrog() {
-  // change the 'Gandalf' textNode to 'Gandalf the White'
-  // apply style to the element
-  // make the background 'white', add a grey border
-  var gandalf = document.getElementById("Gandalf the Grey");
-  gandalf.setAttribute("id", "Gandalf the White");
-  gandalf.textContent = "Gandalf the White";
-  gandalf.style.backgroundColor = "white";
-  gandalf.style.border = "2px solid grey";
-
-}, 15000);
-
-// Part 9
-
-setTimeout(function hornOfGondor() {
-  // pop up an alert that the horn of gondor has been blown
-  // Boromir's been killed by the Uruk-hai!
-  // put a linethrough on boromir's name
-  // Remove Boromir from the Fellowship
-
-  alert("The Horn of Gondor has been blown. Boromir's been killed by the Uruk-hai!");
-  var boromir = document.getElementById("Boromir");
-  boromir.style.textDecoration = "line-through";
-  var aside = document.querySelector("aside ul");
-  aside.removeChild(boromir)
+//   for (var i = 0; i < allCharacters.length; i++) {
 
 
-}, 17000);
+//     allCharacters[i].addEventListener("click", function(){
+
+//         list.appendChild(this);
+//         alert(this.textContent + " have joined the party");
+//     });
+
+//   }
+
+// }, 13000);
+
+// // Part 8
 
 
-// Part 10
+// setTimeout(function theBalrog() {
+//   // change the 'Gandalf' textNode to 'Gandalf the White'
+//   // apply style to the element
+//   // make the background 'white', add a grey border
+//   var gandalf = document.getElementById("Gandalf the Grey");
+//   gandalf.setAttribute("id", "Gandalf the White");
+//   gandalf.textContent = "Gandalf the White";
+//   gandalf.style.backgroundColor = "white";
+//   gandalf.style.border = "2px solid grey";
 
-setTimeout(function itsDangerousToGoAlone(){
-  // take Frodo and Sam out of the fellowship and move them to Mordor
-  // add a div with an id of 'mount-doom' to Mordor
-  var frodo = document.getElementById("Frodo Baggins");
-  var sam = document.getElementById("Samwise 'Sam' Gamgee");
-  var mountDoom = document.createElement("div");
-  mountDoom.setAttribute("id", "mount-doom");
-  var mordor = document.getElementsByTagName("article")[2];
-  mordor.appendChild(mountDoom);
-  mountDoom.appendChild(frodo);
-  mountDoom.appendChild(sam);
+// }, 15000);
 
-}, 19000);
+// // Part 9
 
-// Part 11
+// setTimeout(function hornOfGondor() {
+//   // pop up an alert that the horn of gondor has been blown
+//   // Boromir's been killed by the Uruk-hai!
+//   // put a linethrough on boromir's name
+//   // Remove Boromir from the Fellowship
 
-setTimeout(function weWantsIt() {
-  // Create a div with an id of 'gollum' and add it to Mordor
-  // Remove the ring from Frodo and give it to Gollum
-  // Move Gollum into Mount Doom
+//   alert("The Horn of Gondor has been blown. Boromir's been killed by the Uruk-hai!");
+//   var boromir = document.getElementById("Boromir");
+//   boromir.style.textDecoration = "line-through";
+//   var aside = document.querySelector("aside ul");
+//   aside.removeChild(boromir)
 
-  var mordor = document.getElementsByTagName("article")[2];
-  var gollum = document.createElement("div");
-  gollum.setAttribute("id", "gollum");
-  mordor.appendChild(gollum);
-  var ring = document.getElementById("the-ring");
-  gollum.appendChild(ring);
-  var mountDoom = document.getElementById("mount-doom");
-  mountDoom.appendChild(gollum);
 
-}, 21000);
+// }, 17000);
 
-// Part 12
 
-setTimeout(function thereAndBackAgain() {
-  // remove Gollum and the Ring from the document
-  // remove all the baddies from the document
-  // Move all the hobbits back to the shire
+// // Part 10
 
-  var gollum = document.getElementById("gollum");
-  gollum.parentNode.removeChild(gollum);
-  var buddies = document.getElementsByClassName("buddies")
+// setTimeout(function itsDangerousToGoAlone(){
+//   // take Frodo and Sam out of the fellowship and move them to Mordor
+//   // add a div with an id of 'mount-doom' to Mordor
+//   var frodo = document.getElementById("Frodo Baggins");
+//   var sam = document.getElementById("Samwise 'Sam' Gamgee");
+//   var mountDoom = document.createElement("div");
+//   mountDoom.setAttribute("id", "mount-doom");
+//   var mordor = document.getElementsByTagName("article")[2];
+//   mordor.appendChild(mountDoom);
+//   mountDoom.appendChild(frodo);
+//   mountDoom.appendChild(sam);
 
-  while (buddies.length !== 0) {
+// }, 19000);
 
-    buddies[0].parentNode.removeChild(buddies[0]);
+// // Part 11
 
-  }
+// setTimeout(function weWantsIt() {
+//   // Create a div with an id of 'gollum' and add it to Mordor
+//   // Remove the ring from Frodo and give it to Gollum
+//   // Move Gollum into Mount Doom
 
-  var theShire = document.getElementsByTagName("article")[0];
+//   var mordor = document.getElementsByTagName("article")[2];
+//   var gollum = document.createElement("div");
+//   gollum.setAttribute("id", "gollum");
+//   mordor.appendChild(gollum);
+//   var ring = document.getElementById("the-ring");
+//   gollum.appendChild(ring);
+//   var mountDoom = document.getElementById("mount-doom");
+//   mountDoom.appendChild(gollum);
 
-  var hobbits = document.getElementsByClassName("hobbit");
+// }, 21000);
 
-  for (var i = 0; i < hobbits.length; i++) {
+// // Part 12
 
-    theShire.appendChild(hobbits[i]);
+// setTimeout(function thereAndBackAgain() {
+//   // remove Gollum and the Ring from the document
+//   // remove all the baddies from the document
+//   // Move all the hobbits back to the shire
 
-  }
+//   var gollum = document.getElementById("gollum");
+//   gollum.parentNode.removeChild(gollum);
+//   var buddies = document.getElementsByClassName("buddies")
 
-}, 23000);
+//   while (buddies.length !== 0) {
+
+//     buddies[0].parentNode.removeChild(buddies[0]);
+
+//   }
+
+//   var theShire = document.getElementsByTagName("article")[0];
+
+//   var hobbits = document.getElementsByClassName("hobbit");
+
+//   for (var i = 0; i < hobbits.length; i++) {
+
+//     theShire.appendChild(hobbits[i]);
+
+//   }
+
+// }, 23000);
 
 
 
