@@ -49,10 +49,10 @@ makeMiddleEarth();
 // Part 2
 /*var theShire = getElementsByTagName("article")[0];
 var rivendell = getElementsByTagName("Article")[1];
-var modor = getElementsByTagName("Article")[2]; Y doesn't this work?*/
+var mordor = getElementsByTagName("Article")[2]; Y doesn't this work?*/
 var theShire = body.querySelectorAll("Article")[0];
 var rivendell = body.querySelectorAll("Article")[1];
-var modor = body.querySelectorAll("Article")[2];
+var mordor = body.querySelectorAll("Article")[2];
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
@@ -75,15 +75,15 @@ makeHobbits();
 var frodo = document.getElementsByClassName("hobbit")[0];
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
-  var div = document.createElement("div");
-  div.setAttribute("id", "the-ring");
+  var ring = document.createElement("div");
+  ring.setAttribute("id", "the-ring");
   // give the div a class of 'magic-imbued-jewelry'
-  div.setAttribute("class", "magic-imbued-jewelry");
+  ring.setAttribute("class", "magic-imbued-jewelry");
   // add the ring as a child of Frodo
-  frodo.appendChild(div);
+  frodo.appendChild(ring);
 
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-  div.addEventListener("click", nazgulScreech);
+  ring.addEventListener("click", nazgulScreech);
 }
 
 keepItSecretKeepItSafe();
@@ -160,31 +160,49 @@ function theBalrog() {
 theBalrog();
 
 // Part 9
-
+var boromir = fellowshipList[4];
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
+  //alert("The horn of Gondo has been blown!");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
+  boromir.style.textDecoration = "line-through;";
   // Remove Boromir from the Fellowship
+  boromir.parentNode.removeChild(boromir);
 }
 
+hornOfGondor();
 
 // Part 10
-
+var sam = fellowshipList[6];
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  mordor.appendChild(sam);
+  mordor.appendChild(frodo);
   // add a div with an id of 'mount-doom' to Mordor
+  var mountDoom = document.createElement("div");
+  mountDoom.setAttribute("id", "mount-doom");
 }
 
+itsDangerousToGoAlone();
 
 // Part 11
-
+var mountDoom2 = document.querySelector("#mount-doom")
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement("div");
+  //gollum.setAttribute("id", "gollum");
+  gollum.setAttribute("id", "gollum");
+  removeRing = frodo.querySelector("#the-ring");
+
   // Remove the ring from Frodo and give it to Gollum
+  gollum.appendChild(removeRing)
+
   // Move Gollum into Mount Doom
+  mountDoom2.appendChild(gollum);
 }
 
+weWantsIt();
 
 // Part 12
 
