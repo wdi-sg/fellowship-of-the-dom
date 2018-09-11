@@ -183,6 +183,7 @@ function hornOfGondor() {
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
 
+  alert("The horn of Gondor has been blown!");
   boromir = document.body.querySelectorAll("li")[4];
   boromir.style.textDecoration = "line-through";
   fellowship = document.getElementById("the-fellowship");
