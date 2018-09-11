@@ -20,6 +20,7 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 
 
+
 // Part 1
 
 
@@ -28,9 +29,39 @@ function makeMiddleEarth() {
   // add each land as an article tag
   // inside each article tag include an h1 with the name of the land
   // append middle-earth to your document body
-}
+
+   //[My own notes ]steps, obtain a reference to where we'll like to add it
+  //create 
+  //modify
+  //attach (which also means append )
+
+
+
+
+ var middleEarth = document.createElement("section"); //section is the tag
+ middleEarth.setAttribute("id", "middle-earth"); //attribute is the id and value is middle earth
+
+ for (var i = 0; i < lands.length; i++) { //create loop
+
+   var land = document.createElement("article");  //create variable 
+   var landH1 = document.createElement("h1");
+   landH1.textContent = lands[i]; //fill up the header, text is from land array
+   land.appendChild(landH1);   //appending header to land element 
+   middleEarth.appendChild(land); //appending land to middle earth
+
+ }
+
+ body.appendChild(middleEarth); //appending middle earth to body
+
+};
+
+
+
+
 
 makeMiddleEarth();
+
+var middleEarth -
 
 
 // Part 2
@@ -38,7 +69,43 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
   // give each hobbit a class of hobbit
+
+  //steps, obtain a reference to where we'll like to add it
+  //create 
+  //modify
+  //attach
+
+  var hobbitsUnorderedList = document.createElement("ul");
+
+
+  //hobbitsUnorderedList.setAttribute("class", "hobbit");
+  for (var i = 0; i < hobbits.length, i++) {
+    var li = document.createElement("li");
+  li.setAttribute("class", "hobbit");
+  li.textContent = hobbits[i];
+  hobbitsUnorderedList.appendChild(li);
+
+
+
+
+    //append hobbit to class
+    //append class to ul
+    //append ul to body
+  }
+
+  var shire=document.getElementByTagName("article")[0]
+
+  shire.appendChild(hobbitsUnorderedList);
+
+
+
+
+var 
+var list =document.getElementByTagName("hobbits");
+var hobbitClass = document.createElement ("ul");
 }
+
+
 
 
 // Part 3
