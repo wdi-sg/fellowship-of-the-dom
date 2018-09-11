@@ -82,7 +82,8 @@ function makeBuddies() {
   aside.appendChild(buddyList);
   rivendell.appendChild(aside);
 }
-makeBuddies();
+
+makeBuddies()
 
 var strider = rivendell.querySelectorAll('li')[3];
 
@@ -104,15 +105,12 @@ leaveTheShire();
 var fellowshipMembers = rivendell.querySelectorAll('li');
 
 function forgeTheFellowShip() {
-  // create a new div called 'the-fellowship' within rivendell
-  var theFellowship = document.createElement('div');
-  theFellowship.setAttribute('id', 'the-fellowship');
+  var theFellowship = document.createElement('div')
+  theFellowship.setAttribute('id', 'the-fellowship')
   for(var i = 0, len = fellowshipMembers.length; i < len; i++){
     theFellowship.appendChild(fellowshipMembers[i]);
-    // alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
+    alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
   }
-  // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
   rivendell.appendChild(theFellowship);
 }
 
