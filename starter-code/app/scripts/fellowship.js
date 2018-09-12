@@ -19,12 +19,6 @@ var buddies = [
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 //----------------------------------------------------------------------------------------------------------
-//fade-in and fade-out
-function fadeIn(){
-
-}
-
-//----------------------------------------------------------------------------------------------------------
 // Part 1
 
 function makeMiddleEarth() {
@@ -69,7 +63,7 @@ function makeHobbits() {
   theShrine.appendChild(unorderedList);
   //console.log(theShrine);
 }
-makeHobbits();
+//makeHobbits();
 //----------------------------------------------------------------------------------------------------------
 //Part 3
 function keepItSecretKeepItSafe() {
@@ -99,7 +93,7 @@ function keepItSecretKeepItSafe() {
     setTimeout(fadeIn, 3000);
     });
 }
-keepItSecretKeepItSafe();
+//keepItSecretKeepItSafe();
 //----------------------------------------------------------------------------------------------------------
 // Part 4
 function makeBuddies() {
@@ -248,5 +242,18 @@ function thereAndBackAgain() {
   console.log(theShire);
 }
 //thereAndBackAgain();
+//----------------------------------------------------------------------------------------------------------
+setTimeout(makeHobbits, 4000);
+setTimeout(keepItSecretKeepItSafe, 7000);
+setTimeout(makeBuddies, 8000);
+setTimeout(beautifulStranger, 9000);
+setTimeout(leaveTheShire, 12000);
+setTimeout(forgeTheFellowShip, 15000);
+setTimeout(theBalrog, 16000);
+setTimeout(hornOfGondor, 20000);
+setTimeout(itsDangerousToGoAlone, 24000);
+setTimeout(weWantsIt, 26000);
+setTimeout(thereAndBackAgain, 30000);
+
 
 
