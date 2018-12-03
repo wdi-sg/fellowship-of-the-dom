@@ -87,8 +87,7 @@ divTag.setAttribute("class", "magic-imbued-jewelry");
 var getFrodo = document.getElementsByClassName("hobbit")[0];
 getFrodo.appendChild(divTag);
 
-//document.getElementById("the-ring").addEventListener("click", function())
-
+//document.getElementById("the-ring").addEventListener("click", nazgulScreech());
 }
 
 keepItSecretKeepItSafe();
@@ -118,14 +117,20 @@ getRivendell.getElementsByTagName("h1")[1].appendChild(asideTag);
 
 }
 
-makeBuddies()
+makeBuddies();
 
 // Part 5
 
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+var textAragorn = document.createTextNode("Aragorn");
+var getStrider = document.getElementById("list-of-buddies").childNodes[3];
+getStrider.replaceChild(textAragorn, getStrider.childNodes[0]);
+
 }
+
+beautifulStranger();
 
 
 // Part 6
