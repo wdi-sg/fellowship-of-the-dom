@@ -48,16 +48,16 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
   // give each hobbit a class of hobbit
-  var secondArticle = document.getElementsByTagName("article")[0];
-  for (var i in hobbits) {
+    var secondArticle = document.getElementsByTagName("article")[0];
     var unorderedList = document.createElement("ul");
+    for (var i in hobbits) {
     var listItem = document.createElement("li");
     var listItemContent = document.createTextNode(hobbits[i]);
     listItem.className = "hobbit";
     listItem.appendChild(listItemContent);
     unorderedList.appendChild(listItem);
-  }
-  secondArticle.appendChild(unorderedList);
+    }
+    secondArticle.appendChild(unorderedList);
 }
 
 makeHobbits();
@@ -134,8 +134,35 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-}
+  var fellowDiv = document.createElement("div");
+  fellowDiv.className = "the-fellowship";
+  document.getElementsByTagName("h1")[1].appendChild(fellowDiv);
+  var theFellowship = document.getElementsByClassName("the-fellowship");
 
+  var hobbits = document.getElementsByTagName("ul")[0].getElementsByTagName("li");
+  var buddies = document.getElementsByTagName("ul")[1].getElementsByTagName("li");
+  var hobbitsArr = Object.values(hobbits);
+  var buddiesArr = Object.values(buddies);
+  var fellowsArr = [];
+
+  while (hobbitsArr.length > 0 || buddiesArr.length > 0) {
+    var hobs = hobbitsArr.shift();
+    alert(`${hobs.textContent} have joined  your party!`)
+    fellowsArr.push(hobs);
+    if (buddiesArr.length == 0) {
+        break;
+    }
+    var buds = buddiesArr.shift();
+    alert(`${buds.textContent} have joined  your party!`)
+    fellowsArr.push(buds);
+  }
+
+    for (var i in fellowsArr) {
+        theFellowship[0].appendChild(fellowsArr[i]);
+    }
+  }
+
+forgeTheFellowShip();
 
 // Part 8
 
