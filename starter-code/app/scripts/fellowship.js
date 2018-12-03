@@ -119,7 +119,12 @@ beautifulStranger();
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  var hobbits = document.getElementsByTagName("ul")[0];
+  hobbits.parentNode.removeChild(hobbits);
+  document.getElementsByTagName("h1")[1].appendChild(hobbits);
 }
+
+leaveTheShire();
 
 
 // Part 7
