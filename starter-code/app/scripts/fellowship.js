@@ -36,7 +36,7 @@ makeMiddleEarth();
 // Part 2
 
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the second article tag on the page)
+  // display an unordered list of hobbits in the shire (the article tag)
   // give each hobbit a class of hobbit
 }
 
