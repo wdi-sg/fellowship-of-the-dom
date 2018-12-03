@@ -87,7 +87,7 @@ divTag.setAttribute("class", "magic-imbued-jewelry");
 var getFrodo = document.getElementsByClassName("hobbit")[0];
 getFrodo.appendChild(divTag);
 
-document.getElementById("the-ring").addEventListener("click", nazgulScreech());
+document.getElementById("the-ring").addEventListener("click", nazgulScreech);
 
 }
 
