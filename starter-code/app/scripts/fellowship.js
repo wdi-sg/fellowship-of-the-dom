@@ -104,16 +104,20 @@ function makeBuddies() {
   // insert your aside as a child element of rivendell
 
 var asideTag = document.createElement("aside");
-asideTag.setAttribute("id", "list-of-buddies");
 var getRivendell = document.getElementById("middle-earth");
 getRivendell.getElementsByTagName("h1")[1].appendChild(asideTag);
 
+var ulTag = document.createElement("ul");
+ulTag.setAttribute("id", "list-of-buddies");
+getRivendell.getElementsByTagName("h1")[1].appendChild(ulTag);
+
+
+
     buddies.forEach(function(bff) {
-        var ulTag = document.createElement("ul");
-        ulTag.setAttribute("class", "bff");
-        ulTag.textContent = bff;
+        var liTag = document.createElement("li");
+        liTag.textContent = bff;
         var getListBuddies = document.getElementById("list-of-buddies");
-        getListBuddies.appendChild(ulTag);
+        getListBuddies.appendChild(liTag);
    });
 
 }
@@ -152,6 +156,9 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
+  var divTag = document.createElement("div");
+  divTag.textContent = "the-fellowship";
+
 
 }
 
