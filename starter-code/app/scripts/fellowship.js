@@ -87,7 +87,8 @@ divTag.setAttribute("class", "magic-imbued-jewelry");
 var getFrodo = document.getElementsByClassName("hobbit")[0];
 getFrodo.appendChild(divTag);
 
-//document.getElementById("the-ring").addEventListener("click", nazgulScreech());
+document.getElementById("the-ring").addEventListener("click", nazgulScreech());
+
 }
 
 keepItSecretKeepItSafe();
@@ -137,8 +138,12 @@ beautifulStranger();
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  var getHobbits = document.getElementById("list-of-hobbits");
+  var rivendell = document.getElementById("middle-earth");
+  rivendell.getElementsByTagName("h1")[1].appendChild(getHobbits);
 }
 
+leaveTheShire();
 
 // Part 7
 
@@ -147,6 +152,7 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
+
 }
 
 
