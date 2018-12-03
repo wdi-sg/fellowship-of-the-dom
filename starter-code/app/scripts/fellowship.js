@@ -78,7 +78,21 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   // add the ring as a child of Frodo
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+
+var divTag = document.createElement("div");
+divTag.setAttribute("id", "the-ring")
+divTag.setAttribute("class", "magic-imbued-jewelry");
+var getFrodo = document.getElementsByClassName("hobbit")[0];
+getFrodo.appendChild(divTag);
+
+
+
+//document.getElementById("the-ring").addEventListener("click", function())
+
 }
+
+keepItSecretKeepItSafe();
+
 
 
 // Part 4
