@@ -36,15 +36,12 @@ document.body.appendChild(sectionTag);
         var articleTag = document.createElement("article");
         var h1Tag = document.createElement("h1");
         h1Tag.textContent = land;
-        articleTag.appendChild(h1Tag);
+        articleTag.appendChild(h1Tag); //append <h1> land </h1> to article tag.
 
         var getIdMidEarth = document.getElementById("middle-earth");
         getIdMidEarth.appendChild(articleTag);
-        // document.getElementsByTagName()getIdMidEarth
 
     });
-
-document.body.appendChild(sectionTag);
 }
 
 makeMiddleEarth();
@@ -55,18 +52,23 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
-// var ulTag = document.createElement("ul");
-// ulTag.classId("list-of-hobbits");
-// document.get
-//     hobbits.forEach(function(hobbit) {
-//         var liTag = document.createElement("li");
-//         liTag.className("hobbit");
+var ulTag = document.createElement("ul");
+ulTag.setAttribute("id","list-of-hobbits");
+var getIdMidEarth = document.getElementById("middle-earth");
+getIdMidEarth.getElementsByTagName("h1")[0].appendChild(ulTag);
 
+    hobbits.forEach(function(hobbit) {
+        var liTag = document.createElement("li");
+        liTag.setAttribute("class", "hobbit");
+        liTag.textContent = hobbit;
+        var getListHobbits = document.getElementById("list-of-hobbits");
 
-
-// }
+        getListHobbits.appendChild(liTag);
+    });
 
 }
+
+makeHobbits();
 
 
 // Part 3
