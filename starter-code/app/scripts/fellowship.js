@@ -48,8 +48,18 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the second article tag on the page)
   // give each hobbit a class of hobbit
+  var secondArticle = document.getElementsByTagName("article")[0];
+  for (var i in hobbits) {
+    var unorderedList = document.createElement("ul");
+    var listItem = document.createElement("li");
+    listItem.className = "hobbit";
+    listItem.textContent = hobbits[i];
+    unorderedList.appendChild(listItem);
+  }
+  secondArticle.appendChild(unorderedList);
 }
 
+makeHobbits();
 
 // Part 3
 
