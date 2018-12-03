@@ -52,8 +52,9 @@ function makeHobbits() {
   for (var i in hobbits) {
     var unorderedList = document.createElement("ul");
     var listItem = document.createElement("li");
+    var listItemContent = document.createTextNode(hobbits[i]);
     listItem.className = "hobbit";
-    listItem.textContent = hobbits[i];
+    listItem.appendChild(listItemContent);
     unorderedList.appendChild(listItem);
   }
   secondArticle.appendChild(unorderedList);
@@ -84,9 +85,23 @@ keepItSecretKeepItSafe();
 
 function makeBuddies() {
   // create an aside tag
+  var asideTag = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
-}
+
+    var unorderedList = document.createElement("ul");
+    for (var i in buddies) {
+            var listItem = document.createElement("li");
+            var listItemContent = document.createTextNode(buddies[i]);
+            listItem.appendChild(listItemContent);
+            unorderedList.appendChild(listItem);
+        }
+        asideTag.appendChild(unorderedList);
+        // insert your aside as a child element of rivendell
+        var rivendell = document.getElementsByTagName("h1")[1];
+        rivendell.appendChild(asideTag);
+    }
+
+makeBuddies();
 
 
 // Part 5
@@ -94,7 +109,10 @@ function makeBuddies() {
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  document.getElementsByTagName("li")[4].textContent = "Aragorn"
 }
+
+beautifulStranger();
 
 
 // Part 6
