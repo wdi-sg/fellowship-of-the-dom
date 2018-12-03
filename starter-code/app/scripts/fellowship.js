@@ -41,6 +41,7 @@ document.body.appendChild(sectionTag);
         var getIdMidEarth = document.getElementById("middle-earth");
         getIdMidEarth.appendChild(articleTag);
 
+
     });
 }
 
@@ -52,6 +53,7 @@ makeMiddleEarth();
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
+
 var ulTag = document.createElement("ul");
 ulTag.setAttribute("id","list-of-hobbits");
 var getIdMidEarth = document.getElementById("middle-earth");
@@ -64,8 +66,8 @@ getIdMidEarth.getElementsByTagName("h1")[0].appendChild(ulTag);
         var getListHobbits = document.getElementById("list-of-hobbits");
 
         getListHobbits.appendChild(liTag);
-    });
 
+    });
 }
 
 makeHobbits();
@@ -85,8 +87,6 @@ divTag.setAttribute("class", "magic-imbued-jewelry");
 var getFrodo = document.getElementsByClassName("hobbit")[0];
 getFrodo.appendChild(divTag);
 
-
-
 //document.getElementById("the-ring").addEventListener("click", function())
 
 }
@@ -102,8 +102,23 @@ function makeBuddies() {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+
+var asideTag = document.createElement("aside");
+asideTag.setAttribute("id", "list-of-buddies");
+var getRivendell = document.getElementById("middle-earth");
+getRivendell.getElementsByTagName("h1")[1].appendChild(asideTag);
+
+    buddies.forEach(function(bff) {
+        var ulTag = document.createElement("ul");
+        ulTag.setAttribute("class", "bff");
+        ulTag.textContent = bff;
+        var getListBuddies = document.getElementById("list-of-buddies");
+        getListBuddies.appendChild(ulTag);
+   });
+
 }
 
+makeBuddies()
 
 // Part 5
 
