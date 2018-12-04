@@ -16,10 +16,20 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
+var shire
+var rivendell
+var mordor
+var nazgulScreech = document.getElementById("nazgul-screech")
+var theFellowship
+var frodo
+var mountDoom
 // Part 1
 
-function makeMiddleEarth() {
+var functionCounter = 0
+// var movie =[makeMiddleEarth()]
+// setInterval(, 1000)
+
+var makeMiddleEarth = function makeMiddleEarth() {
     // create a section tag with an id of middle-earth
     // add each land as an article tag
     // inside each article tag include an h1 with the name of the land
@@ -34,15 +44,17 @@ function makeMiddleEarth() {
         section.appendChild(article)
     })
     body.appendChild(section)
+    shire = document.querySelectorAll("article")[0]
+    rivendell =  document.querySelectorAll("article")[1]
+    mordor = document.querySelectorAll("article")[2]
 }
+setTimeout(makeMiddleEarth, 2000)
 
-makeMiddleEarth();
-
-var shire = document.querySelectorAll("article")[0]
+// makeMiddleEarth();
 
 // Part 2
 
-function makeHobbits() {
+var makeHobbits = function makeHobbits() {
     // display an unordered list of hobbits in the shire (which is the first article tag on the page)
     // give each hobbit a class of hobbit
     var ul = document.createElement("ul")
@@ -55,14 +67,13 @@ function makeHobbits() {
     })
     shire.appendChild(ul)
 }
-
-makeHobbits();
+setTimeout(makeHobbits, 4000)
+// makeHobbits();
 
 // Part 3
 
-var nazgulScreech = document.getElementById("nazgul-screech")
 
-function keepItSecretKeepItSafe() {
+var keepItSecretKeepItSafe = function keepItSecretKeepItSafe() {
     // create a div with an id of 'the-ring'
     // give the div a class of 'magic-imbued-jewelry'
     // add the ring as a child of Frodo
@@ -77,14 +88,14 @@ function keepItSecretKeepItSafe() {
     var frodo = document.querySelectorAll("li")[0]
     frodo.appendChild(theRing)
 }
+setTimeout(keepItSecretKeepItSafe, 6000)
 
-keepItSecretKeepItSafe()
+// keepItSecretKeepItSafe()
 
 // Part 4
 
-var rivendell = document.querySelectorAll("article")[1]
 
-function makeBuddies() {
+var makeBuddies = function makeBuddies() {
     // create an aside tag
     // attach an unordered list of the 'buddies' in the aside
     // insert your aside as a child element of rivendell
@@ -98,34 +109,37 @@ function makeBuddies() {
     aside.appendChild(ul)
     rivendell.appendChild(aside)
 }
+setTimeout(makeBuddies, 8000)
 
-makeBuddies()
+// makeBuddies()
 
 // Part 5
 
-function beautifulStranger() {
+var beautifulStranger = function beautifulStranger() {
     // change the 'Strider' textnode to 'Aragorn'
     rivendell.querySelectorAll("li")[3].textContent = "Aragorn"
 }
+setTimeout(beautifulStranger , 10000)
 
-beautifulStranger()
+// beautifulStranger()
 
 // Part 6
 
-function leaveTheShire() {
+var leaveTheShire = function leaveTheShire() {
     // assemble the hobbits and move them to Rivendell
     rivendell.appendChild(shire.querySelector("ul"))
 }
+setTimeout(leaveTheShire, 12000)
 
-leaveTheShire()
+// leaveTheShire()
 
 // Part 7
 
-function forgeTheFellowShip() {
+var forgeTheFellowship = function forgeTheFellowShip() {
     // create a new div called 'the-fellowship' within rivendell
     // add each hobbit and buddy one at a time to 'the-fellowship'
     // after each character is added make an alert that they have joined your party
-    var theFellowship = document.createElement("div")
+    theFellowship = document.createElement("div")
     theFellowship.id = "the-fellowship"
     rivendell.appendChild(theFellowship)
 
@@ -136,13 +150,13 @@ function forgeTheFellowShip() {
     }
 }
 
-forgeTheFellowShip()
+setTimeout(forgeTheFellowship, 14000)
 
-var theFellowship = document.getElementById("the-fellowship")
+// forgeTheFellowShip()
 
 // Part 8
 
-function theBalrog() {
+var theBalrog = function theBalrog() {
     // change the 'Gandalf' textNode to 'Gandalf the White'
     // apply style to the element
     // make the background 'white', add a grey border
@@ -153,27 +167,33 @@ function theBalrog() {
     gandalf.style.color = "white"
 }
 
-theBalrog()
+setTimeout(theBalrog, 16000)
+
+// theBalrog()
 
 // Part 9
 
-function hornOfGondor() {
+var hornOfGondor = function hornOfGondor() {
     // pop up an alert that the horn of gondor has been blown
     // Boromir's been killed by the Uruk-hai!
     // put a linethrough on boromir's name
     // Remove Boromir from the Fellowship
     alert("The horn of Gondor has been blown!")
     alert("Boromir has been killed by the Uruk-hai!")
-    theFellowship.querySelectorAll("li")[4].remove()
+    var strike = document.createElement("strike")
+    strike.appendChild(theFellowship.querySelectorAll("li")[4])
+    rivendell.appendChild(strike)
+    // theFellowship.querySelectorAll("li")[4].remove()
 }
 
-hornOfGondor()
+setTimeout(hornOfGondor, 18000)
+
+// hornOfGondor()
 
 // Part 10
 
-var mordor = document.querySelectorAll("article")[2]
 
-function itsDangerousToGoAlone(){
+var itsDangerousToGoAlone = function itsDangerousToGoAlone(){
     // take Frodo and Sam out of the fellowship and move them to Mordor
     // add a div with an id of 'mount-doom' to Mordor
     var mountDoom = document.createElement("div")
@@ -184,28 +204,31 @@ function itsDangerousToGoAlone(){
     mordor.appendChild(mountDoom)
 }
 
-itsDangerousToGoAlone()
+setTimeout(itsDangerousToGoAlone, 20000)
+
+// itsDangerousToGoAlone()
 
 // Part 11
 
-var frodo = mordor.querySelectorAll("li")[0]
-var mountDoom = document.getElementById("mount-doom")
-
-function weWantsIt() {
+var weWantsIt = function weWantsIt() {
     // Create a div with an id of 'gollum' and add it to Mordor
     // Remove the ring from Frodo and give it to Gollum
     // Move Gollum into Mount Doom
+    frodo = mordor.querySelectorAll("li")[0]
+    mountDoom = document.getElementById("mount-doom")
     var gollum = document.createElement("div")
     gollum.id = "gollum"
     gollum.appendChild(document.getElementById("the-ring"))
     mountDoom.appendChild(gollum)
 }
 
-weWantsIt()
+setTimeout(weWantsIt, 22000)
+
+// weWantsIt()
 
 // Part 12
 
-function thereAndBackAgain() {
+var thereAndBackAgain = function thereAndBackAgain() {
     // remove Gollum and the Ring from the document
     // remove all the baddies from the document
     // Move all the hobbits back to the shire
@@ -216,4 +239,6 @@ function thereAndBackAgain() {
     }
 }
 
-thereAndBackAgain()
+setTimeout(thereAndBackAgain, 24000)
+
+// thereAndBackAgain()
