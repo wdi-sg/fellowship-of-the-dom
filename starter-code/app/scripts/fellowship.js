@@ -53,11 +53,11 @@ makeMiddleEarth();
 
 
 // Part 2
-
+var frodoLi;
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (the article tag)
   var unorderedListHobbits = document.createElement("ul");
-  var frodoLi = document.createElement("li");
+  frodoLi = document.createElement("li");
   frodoLi.innerHTML = "Frodo Baggins";
   var samwiseLi = document.createElement("li");
   samwiseLi.innerHTML = "Samwise Gangee";
@@ -83,11 +83,15 @@ makeHobbits();
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var theRing = document.createElement("div");
+  theRing.setAttribute("class", "magic-imbued-jewelry");
   // give the div a class of 'magic-imbued-jewelry'
+  frodoLi.appendChild(theRing);
   // add the ring as a child of Frodo
+  theRing.addEventListener("click", nazgulScreech);
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
 }
-
+keepItSecretKeepItSafe();
 
 // Part 4
 
