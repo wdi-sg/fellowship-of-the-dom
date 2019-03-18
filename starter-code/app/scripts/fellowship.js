@@ -24,13 +24,35 @@ var body = document.querySelector('body');
 
 
 function makeMiddleEarth() {
-  // create a section tag with an id of middle-earth
-  // add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
-  // append middle-earth to your document body
-}
+  // 1.1 create a section tag with an id of middle-earth
+  var middleEarth = document.createElement('section');
+  middleEarth.id = "middle-earth";
+  console.log(middleEarth);
+  // 1.2 add each land as an article tag
+  for(var i=0; i<lands.length;i++){
+    lands[i] = document.createElement('article');
+    middleEarth.appendChild(lands[i]);
+    console.log(lands[i]);
+  }
+  console.log(lands);
 
+  // 1.3 inside each article tag include an h1 with the name of the land
+  console.log('creating The Shire h1 tag')
+  var theShire = document.createElement('h1');
+  theShire.innerText = "The Shire";
+  console.log(theShire);
+  console.log('created The Shire h1 tag')
+  document.getElementsByTagName('article').appendChild(theShire);
+  lands[1] = document.createElement('h1');
+  console.log(lands[1]);
+  lands[2] = document.createElement('h1');
+  console.log(lands[2]);
+
+  // 1.4 append middle-earth to your document body
+}
+//console.log("end of makeMiddleEarth function");
 makeMiddleEarth();
+//console.log(middleEarth.id);
 
 
 // Part 2
