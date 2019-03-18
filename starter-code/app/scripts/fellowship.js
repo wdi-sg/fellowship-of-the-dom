@@ -47,7 +47,7 @@ makeMiddleEarth();
 // Part 2
 function makeHobbits() {
   // 2.1 display an unordered list of hobbits in the shire (the article tag)
-  var theShire = document.querySelectorAll('article')[0];
+  var theShire = document.querySelectorAll("article")[0];
   console.log(theShire);
   var ulShire = document.createElement("ul");
   theShire.appendChild(ulShire);
@@ -90,9 +90,21 @@ function makeBuddies() {
   // create an aside tag
   var aside = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
+  var ulBuddies = document.createElement("ul");
+  aside.appendChild(ulBuddies);
+  for (i=0; i<buddies.length; i++){
+    var li = document.createElement("li");
+// give each hobbit a class of hobbit
+    li.className = "buddies";
+    li.innerText = buddies[i];
+    ulBuddies.appendChild(li);
+  }
   // insert your aside as a child element of rivendell
+  var rivendell = document.getElementsByTagName("article")[1];
+  rivendell.appendChild(aside);
 }
 
+makeBuddies();
 
 // Part 5
 
