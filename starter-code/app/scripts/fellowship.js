@@ -153,12 +153,12 @@ function forgeTheFellowShip() {
   for (let i = 0; i < buddyElementsLength; i++) {
     const buddy = buddyElements[0];
     fellowshipDiv.appendChild(buddy);
-    alert(buddy.innerHTML + " has joined the fellowship.");
+    alert(buddy.innerText + " has joined the fellowship.");
   }
   for (let j = 0; j < hobbitElementsLength; j++) {
     const hobbit = hobbitElements[0];
     fellowshipDiv.appendChild(hobbit);
-    alert(hobbit.innerHTML + " has joined the fellowship.");
+    alert(hobbit.innerText + " has joined the fellowship.");
   }
   // after each character is added make an alert that they have joined your party
 }
@@ -169,6 +169,19 @@ function forgeTheFellowShip() {
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  var buddiesArray = document.getElementsByClassName("buddy");
+  for (let i = 0; i < buddiesArray.length; i++) {
+    const buddy = buddiesArray[i].innerText;
+    if (buddy === "gandalf the grey") {
+      buddiesArray[i].innerText = "Gandalf the White";
+      buddiesArray[i].style.backgroundColor = "white";
+      buddiesArray[i].style.borderWidth = "4px";
+      buddiesArray[i].style.borderStyle = "solid";
+      buddiesArray[i].style.borderColor = "grey";
+      buddiesArray[i].style.padding = "5px";
+      buddiesArray[i].style.width = "120px";
+    }
+  }
   // apply style to the element
   // make the background 'white', add a grey border
 }
