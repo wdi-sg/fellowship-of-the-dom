@@ -29,9 +29,9 @@ function makeMiddleEarth() {
   var middleEarth = document.createElement("section");
   middleEarth.setAttribute("id", "middle-earth");
   // add each land as an article tag
-  theShire = document.createElement("a");
-  rivendell = document.createElement("a");
-  mordor = document.createElement("a");
+  theShire = document.createElement("article");
+  rivendell = document.createElement("article");
+  mordor = document.createElement("article");
   middleEarth.appendChild(theShire);
   middleEarth.appendChild(rivendell);
   middleEarth.appendChild(mordor);
@@ -54,9 +54,10 @@ makeMiddleEarth();
 
 // Part 2
 var frodoLi;
+var unorderedListHobbits;
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (the article tag)
-  var unorderedListHobbits = document.createElement("ul");
+  unorderedListHobbits = document.createElement("ul");
   frodoLi = document.createElement("li");
   frodoLi.innerHTML = "Frodo Baggins";
   var samwiseLi = document.createElement("li");
@@ -103,6 +104,7 @@ function makeBuddies() {
   for (let i = 0; i < buddies.length; i++) {
     const buddy = buddies[i];
     var buddyElement = document.createElement("li");
+    buddyElement.setAttribute("class", "buddy");
     buddyElement.innerHTML = buddy;
     ulBuddies.appendChild(buddyElement);
   }
@@ -132,15 +134,32 @@ beautifulStranger();
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
+  rivendell.appendChild(unorderedListHobbits);
 }
-
+leaveTheShire();
 
 // Part 7
 
-
+var fellowshipDiv;
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  fellowshipDiv = document.createElement("div");
+  fellowshipDiv.setAttribute("id", "the-fellowship");
   // add each hobbit and buddy one at a time to 'the-fellowship'
+  var buddyElements = document.getElementsByClassName("buddy");
+  var hobbitElements = document.getElementsByClassName("hobbit");
+  var buddyElementsLength = buddyElements.length;
+  var hobbitElementsLength = hobbitElements.length;
+  for (let i = 0; i < buddyElementsLength; i++) {
+    const buddy = buddyElements[0];
+    fellowshipDiv.appendChild(buddy);
+    alert(buddy.innerHTML + " has joined the fellowship.");
+  }
+  for (let j = 0; j < hobbitElementsLength; j++) {
+    const hobbit = hobbitElements[0];
+    fellowshipDiv.appendChild(hobbit);
+    alert(hobbit.innerHTML + " has joined the fellowship.");
+  }
   // after each character is added make an alert that they have joined your party
 }
 
