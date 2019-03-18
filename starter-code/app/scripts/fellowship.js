@@ -249,6 +249,17 @@ function weWantsIt() {
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+  var gollum = document.getElementById("gollum");
+  var mountDoom = document.getElementById("mount-doom");
+  mountDoom.removeChild(gollum);
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
+  var hobbitElements = document.getElementsByClassName("hobbit");
+  for (const key in hobbitElements) {
+    if (hobbitElements.hasOwnProperty(key)) {
+      const element = hobbitElements[key];
+      
+      theShire.appendChild(element);
+    }
+  }
 }
