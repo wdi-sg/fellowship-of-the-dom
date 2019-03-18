@@ -18,8 +18,9 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
-
+var theShire;
+var rivendell;
+var mordor;
 // Part 1
 
 
@@ -28,9 +29,9 @@ function makeMiddleEarth() {
   var middleEarth = document.createElement("section");
   middleEarth.setAttribute("id", "middle-earth");
   // add each land as an article tag
-  var theShire = document.createElement("a");
-  var rivendell = document.createElement("a");
-  var mordor = document.createElement("a");
+  theShire = document.createElement("a");
+  rivendell = document.createElement("a");
+  mordor = document.createElement("a");
   middleEarth.appendChild(theShire);
   middleEarth.appendChild(rivendell);
   middleEarth.appendChild(mordor);
@@ -55,9 +56,28 @@ makeMiddleEarth();
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (the article tag)
+  var unorderedListHobbits = document.createElement("ul");
+  var frodoLi = document.createElement("li");
+  frodoLi.innerHTML = "Frodo Baggins";
+  var samwiseLi = document.createElement("li");
+  samwiseLi.innerHTML = "Samwise Gangee";
+  var merryLi = document.createElement("li");
+  merryLi.innerHTML = "Merry";
+  var pippinLi = document.createElement("li");
+  pippinLi.innerHTML = "Pippin";
   // give each hobbit a class of hobbit
+  frodoLi.setAttribute("class", "hobbit");
+  samwiseLi.setAttribute("class", "hobbit");
+  merryLi.setAttribute("class", "hobbit");
+  pippinLi.setAttribute("class", "hobbit");
+  //append everything
+  theShire.appendChild(unorderedListHobbits);
+  unorderedListHobbits.appendChild(frodoLi);
+  unorderedListHobbits.appendChild(samwiseLi);
+  unorderedListHobbits.appendChild(merryLi);
+  unorderedListHobbits.appendChild(pippinLi);
 }
-
+makeHobbits();
 
 // Part 3
 
