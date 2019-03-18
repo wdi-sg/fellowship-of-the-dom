@@ -98,10 +98,20 @@ keepItSecretKeepItSafe();
 
 function makeBuddies() {
   // create an aside tag
+  var asideBuddies = document.createElement("aside");
+  var ulBuddies = document.createElement("ul");
+  for (let i = 0; i < buddies.length; i++) {
+    const buddy = buddies[i];
+    var buddyElement = document.createElement("li");
+    buddyElement.innerHTML = buddy;
+    ulBuddies.appendChild(buddyElement);
+  }
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
+  asideBuddies.appendChild(ulBuddies);
+  rivendell.appendChild(asideBuddies);
 }
-
+makeBuddies();
 
 // Part 5
 
