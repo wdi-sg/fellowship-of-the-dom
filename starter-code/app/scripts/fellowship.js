@@ -105,19 +105,22 @@ function makeBuddies() {
 }
 
 makeBuddies();
-
 // Part 5
 
 
 function beautifulStranger() {
-  // change the 'Strider' textnode to 'Aragorn'
+  // 5.1 change the 'Strider' textnode to 'Aragorn'
+  document.getElementsByClassName("buddies")[3].innerText = "Aragorn";
+  //Aragorn.innerText = "Aragorn";
+  //console.log(Aragorn);
 }
-
+beautifulStranger();
 
 // Part 6
 
 function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
+  // 6.1 assemble the hobbits and move them to Rivendell
+
 }
 
 
