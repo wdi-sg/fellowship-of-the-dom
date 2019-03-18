@@ -55,11 +55,10 @@ function makeHobbits() {
   for (i=0; i<hobbits.length; i++){
     var li = document.createElement("li");
 // give each hobbit a class of hobbit
-    li.class = "hobbit";
+    li.className = "hobbit";
     li.innerText = hobbits[i];
     ulShire.appendChild(li);
   }
-
 }
 makeHobbits();
 
@@ -67,17 +66,29 @@ makeHobbits();
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var theRing = document.createElement("div");
+  theRing.id = "the-ring";
   // give the div a class of 'magic-imbued-jewelry'
+  theRing.className = "magic-imbued-jewelry";
+  console.log(theRing);
   // add the ring as a child of Frodo
+  var frodo = document.getElementsByClassName("hobbit")[0];
+  console.log(frodo);
+  frodo.appendChild(theRing);
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  theRing.addEventListener("click", function() {
+    //Your code here
+    nazgulScreech();
+})
 }
-
+keepItSecretKeepItSafe();
 
 // Part 4
 
 
 function makeBuddies() {
   // create an aside tag
+  var aside = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
 }
