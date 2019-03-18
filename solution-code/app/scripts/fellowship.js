@@ -38,6 +38,8 @@ makeMiddleEarth();
 var theShire = body.querySelectorAll('article')[0];
 var rivendell = body.querySelectorAll('article')[1];
 var mordor = body.querySelectorAll('article')[2];
+
+
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   var hobbitList = document.createElement('ul');
