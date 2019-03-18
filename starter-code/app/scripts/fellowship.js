@@ -18,7 +18,7 @@ var buddies = [
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
-
+console.log(lands);
 
 // Part 1
 
@@ -28,40 +28,40 @@ function makeMiddleEarth() {
   var middleEarth = document.createElement('section');
   middleEarth.id = "middle-earth";
   console.log(middleEarth);
+  document.body.appendChild(middleEarth);
   // 1.2 add each land as an article tag
-  for(var i=0; i<lands.length;i++){
-    lands[i] = document.createElement('article');
-    middleEarth.appendChild(lands[i]);
-    console.log(lands[i]);
-  }
-  console.log(lands);
-
   // 1.3 inside each article tag include an h1 with the name of the land
-  console.log('creating The Shire h1 tag')
-  var theShire = document.createElement('h1');
-  theShire.innerText = "The Shire";
-  console.log(theShire);
-  console.log('created The Shire h1 tag')
-  document.getElementsByTagName('article').appendChild(theShire);
-  lands[1] = document.createElement('h1');
-  console.log(lands[1]);
-  lands[2] = document.createElement('h1');
-  console.log(lands[2]);
-
   // 1.4 append middle-earth to your document body
+  for(var i=0; i<lands.length;i++){
+    var article= document.createElement("article");
+    var h1 = document.createElement("h1");
+    h1.innerText = lands[i];
+    article.appendChild(h1);
+    middleEarth.appendChild(article);
+  }
 }
 //console.log("end of makeMiddleEarth function");
 makeMiddleEarth();
-//console.log(middleEarth.id);
-
+//console.log("call makeMiddleEarth function");
 
 // Part 2
-
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (the article tag)
-  // give each hobbit a class of hobbit
-}
+  // 2.1 display an unordered list of hobbits in the shire (the article tag)
+  var theShire = document.querySelectorAll('article')[0];
+  console.log(theShire);
+  var ulShire = document.createElement("ul");
+  theShire.appendChild(ulShire);
 
+  for (i=0; i<hobbits.length; i++){
+    var li = document.createElement("li");
+// give each hobbit a class of hobbit
+    li.class = "hobbit";
+    li.innerText = hobbits[i];
+    ulShire.appendChild(li);
+  }
+
+}
+makeHobbits();
 
 // Part 3
 
