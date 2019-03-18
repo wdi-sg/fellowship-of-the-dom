@@ -61,7 +61,7 @@ function makeHobbits() {
   frodoLi = document.createElement("li");
   frodoLi.innerHTML = "Frodo Baggins";
   var samwiseLi = document.createElement("li");
-  samwiseLi.innerHTML = "Samwise Gangee";
+  samwiseLi.innerHTML = "Samwise Gamgee";
   var merryLi = document.createElement("li");
   merryLi.innerHTML = "Merry";
   var pippinLi = document.createElement("li");
@@ -209,6 +209,22 @@ function hornOfGondor() {
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  var hobbitsArray = document.getElementsByClassName("hobbit");
+  for (let i = 0; i < hobbitsArray.length; i++) {
+    const hobbit = hobbitsArray[i].innerText;
+    if (hobbit === "frodo baggins") {
+      mordor.appendChild(hobbitsArray[i]);
+    }
+  }
+  for (let i = 0; i < hobbitsArray.length; i++) {
+    const hobbit = hobbitsArray[i].innerText;
+    if (hobbit === "samwise gamgee") {
+      mordor.appendChild(hobbitsArray[i]);
+    }
+  }
+  var mountDoom = document.createElement("div");
+  mountDoom.setAttribute("id", "mount-doom");
+  mordor.appendChild(mountDoom);
   // add a div with an id of 'mount-doom' to Mordor
 }
 
@@ -217,8 +233,15 @@ function itsDangerousToGoAlone(){
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement("div");
+  gollum.setAttribute("id", "gollum");
+  mordor.appendChild(gollum);
   // Remove the ring from Frodo and give it to Gollum
+  var theOneRing = document.querySelector(".magic-imbued-jewelry");
+  gollum.appendChild(theOneRing);
   // Move Gollum into Mount Doom
+  var mountDoom = document.getElementById("mount-doom");
+  mountDoom.appendChild(gollum);
 }
 
 
