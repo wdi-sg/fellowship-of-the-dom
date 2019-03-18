@@ -118,8 +118,15 @@ makeBuddies();
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  var listElements = document.getElementsByTagName("li")
+  for (let i = 0; i < listElements.length; i++) {
+    const element = listElements[i].innerHTML;
+    if(element === "Strider") {
+      listElements[i].innerHTML = "Aragorn";
+    }
+  }
 }
-
+beautifulStranger();
 
 // Part 6
 
