@@ -22,23 +22,57 @@ var body = document.querySelector('body');
 
 // Part 1
 
+// var a = document.createElement("a");
+// a.href = "http://thefair.com/";
+// a.textContent = "thefair.com";
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+
+    var middleEarth = document.createElement("section");
+    middleEarth.setAttribute("id", "middle-earth");
+
+    // var midEarth = document.createElement("div").setAttribute("id", "middle-earth");
+
+// var midEarth = document.createElement("div");
+// midEarth.setAttribute("id", "middle-earth");
+
   // add each land as an article tag
+    var landOne = document.createElement("article");
+    var landTwo = document.createElement("article");
+    var landThree = document.createElement("article");
+
+
   // inside each article tag include an h1 with the name of the land
+  landOne.innerHTML = '<h1>' + lands[0] + '</h1>';
+  landTwo.innerHTML = '<h1>' + lands[1] + '</h1>'
+  landThree.innerHTML = '<h1>' + lands[2] + '</h1>'
+
   // append middle-earth to your document body
+  body.appendChild(middleEarth);
+  body.appendChild(landOne);
+  body.appendChild(landTwo);
+  body.appendChild(landThree);
+
 }
 
 makeMiddleEarth();
 
 
-// Part 2
+// Part
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (the article tag)
+  var hobbitList = document.getElementsByTagName('article');
+  hobbitList[0].innerHTML = '<li>' + hobbits[0] + '</li>' + '<li>' + hobbits[1] + '</li>' + '<li>' + hobbits[2] + '</li>' + '<li>' + hobbits[3] + '</li>';
+
   // give each hobbit a class of hobbit
+  var hobbitClass = document.getElementsByTagName('li');
+  hobbitClass.className = "hobbit";
+
 }
+
+makeHobbits();
 
 
 // Part 3
