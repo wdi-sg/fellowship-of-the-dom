@@ -74,7 +74,7 @@ var frodoClicked = 0;
 var frodoOpacity = 0;
 function frodoFade() {
   frodoClicked++;
-  if (frodoOpacityCounter > 2) {
+  if (frodoClicked > 2) {
     var htmlTag = document.querySelector("html");
     htmlTag.removeChild(body);
     var sauronWon = document.createElement("div");
@@ -88,9 +88,13 @@ var functionIteratorFrodoFade = 0;
 function functionIntervalFrodo() {
   frodoLi.style.color = "rgba(255,255,255," + frodoOpacity + ")";
   functionIteratorFrodoFade++;
-  frodoOpacity = frodoOpacity + 0.01
+  frodoOpacity = frodoOpacity + 0.01;
   if (!(functionIteratorFrodoFade < 100)) {
     clearInterval(setIntervalFrodoFade);
+
+    frodoLi.style.color = "rgba(255,255,255,1)";
+    frodoOpacity = 0;
+    functionIteratorFrodoFade = 0;
   }
 }
 var setIntervalFrodoFade;
