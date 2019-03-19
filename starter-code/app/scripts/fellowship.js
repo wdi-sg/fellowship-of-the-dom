@@ -8,6 +8,8 @@ var hobbits = [
   'Peregrin \'Pippin\' Took'
 ];
 
+
+
 var buddies = [
   'Gandalf the Grey',
   'Legolas',
@@ -25,30 +27,62 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+   var middleEarth =document.createElement('section');
   // add each land as an article tag
+  var land = document.createElement('article');{
+
+  for(var i = 0, island = lands.length; i < island; i++); {
+
   // inside each article tag include an h1 with the name of the land
-  // append middle-earth to your document body
+  land.innerHTML = '<h1>' + lands[i] + '</h1>';
+   middleEarth.appendChild(land);
+}
+    // append middle-earth to your document body
+    body.appendChild(middleEarth);
+}
 }
 
 makeMiddleEarth();
 
+var theShire = body.querySelectorAll('article')[0];
+var rivendell = body.querySelectorAll('article')[1];
+var mordor = body.querySelectorAll('article')[2];
 
 // Part 2
 
 function makeHobbits() {
+
   // display an unordered list of hobbits in the shire (the article tag)
+   var hobbitList = document.createElement('ul');
+  for(var i = 0, len = hobbits.length; i < len; i++){
   // give each hobbit a class of hobbit
+  var hobbit = document.createElement('li');
+    hobbit.className = 'hobbit';
+    hobbit.innerText = hobbits[i];
+    hobbitList.appendChild(hobbit);
 }
+ theShire.appendChild(hobbitList);
+}
+makeHobbits();
+
+var frodo = body.querySelectorAll('li')[0];
 
 
 // Part 3
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var theRing = document.createElement('div');
+  theRing.setAttribute('id', 'the-ring');
   // give the div a class of 'magic-imbued-jewelry'
+  theRing.setAttribute('class', 'magic-imbued-jewelry');
   // add the ring as a child of Frodo
+     frodo.appendChild(theRing);
+};
+
+
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-}
+
 
 
 // Part 4
@@ -56,16 +90,29 @@ function keepItSecretKeepItSafe() {
 
 function makeBuddies() {
   // create an aside tag
+  var aside = document.createElement('aside');
+  var buddyList = document.createElement('ul');
+  for(var i = 0, len = buddies.length; i < len; i++){
   // attach an unordered list of the 'buddies' in the aside
+  var buddy = document.createElement('li');
+    buddy.textContent = buddies[i];
+    buddyList.appendChild(buddy);
+  }
+
   // insert your aside as a child element of rivendell
+  aside.appendChild(buddyList);
+  rivendell.appendChild(aside);
+
 }
+makeBuddies();
 
 
 // Part 5
-
+var strider = rivendell.querySelectorAll('li')[3];
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+strider.textContent = 'Aragon';
 }
 
 
