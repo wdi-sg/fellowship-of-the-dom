@@ -16,7 +16,7 @@ var buddies = [
 ];
 
 var lands = ['The Shire', 'Rivendell', 'Mordor'];
-var body = document.querySelector('body');
+var body = document.querySelector("body");
 
 // Part 1
 
@@ -31,13 +31,12 @@ function makeMiddleEarth() {
   for (var i=0; i<lands.length; i++){
     var land = document.createElement("article");
     var landH1 = document.createElement("h1");
-
-    landH1.textContext = lands[i];
+    landH1.textContent = lands[i];
     land.appendChild(landH1);
     middleEarth.appendChild(land);
   }
   body.appendChild(middleEarth);
-}
+};
 
 makeMiddleEarth();
 
@@ -62,7 +61,7 @@ for(var i=0; i<hobbits.length; i++) {
   theShire.appendChild(hobbitsUL);
   // display an unordered list of hobbits in the shire (the article tag)
   // give each hobbit a class of hobbit
-}
+};
 
 makeHobbits();
 
@@ -71,21 +70,25 @@ makeHobbits();
 
 var Frodo = theShire.querySelectorAll("li")[0]
 
+
+
 function keepItSecretKeepItSafe() {
 
 var theRing = document.createElement("div");
 theRing.classList.add("magic-imbued-jewelry");
 theRing.id = "the-ring";
+theRing.addEventListener("click",nazgulScreech);
 Frodo.appendChild(theRing);
+
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
   // add the ring as a child of Frodo
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-}
+};
 
 keepItSecretKeepItSafe();
 
-// Part 4
+// // Part 4
 
 
 function makeBuddies() {
@@ -102,7 +105,7 @@ for (var i=0; i<buddies.length; i++) {
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-}
+};
 
 makeBuddies();
 
@@ -114,7 +117,7 @@ function beautifulStranger() {
 
 strider.innerHTML = "Aragorn";
   // change the 'Strider' textnode to 'Aragorn'
-}
+};
 
 beautifulStranger();
 
@@ -126,7 +129,7 @@ function leaveTheShire() {
 
 rivendell.appendChild(hobbits);
   // assemble the hobbits and move them to Rivendell
-}
+};
 
 leaveTheShire();
 
@@ -160,10 +163,10 @@ function theBalrog() {
 gandalf.innerHTML = "Gandalf the White";
 gandalf.style.background = "White";
 gandalf.style.border = "5px solid grey";
-  // change the 'Gandalf' textNode to 'Gandalf the White'
-  // apply style to the element
-  // make the background 'white', add a grey border
-}
+// change the 'Gandalf' textNode to 'Gandalf the White'
+// apply style to the element
+// make the background 'white', add a grey border
+};
 
 theBalrog();
 
@@ -182,7 +185,7 @@ boromir.removeChild(boromir.childNodes[0]);
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
-}
+};
 
 hornOfGondor();
 // Part 10
@@ -200,7 +203,7 @@ mordor.appendChild(sam);
 mordor.appendChild(mtDoom);
    // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
-}
+};
 
 itsDangerousToGoAlone();
 // Part 11
@@ -217,7 +220,7 @@ mountDoom.appendChild(gollum);
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-}
+};
 weWantsIt();
 
 // Part 12
@@ -233,6 +236,6 @@ for (var i=0; i<document.querySelectorAll(".hobbit").length; i++) {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
-}
+};
 
 thereAndBackAgain();
