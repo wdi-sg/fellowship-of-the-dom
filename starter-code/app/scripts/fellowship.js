@@ -44,7 +44,7 @@ function makeMiddleEarth() {
   // var mordor = document.querySelectorAll("article")[2];
 };
 
-makeMiddleEarth();
+setTimeout(makeMiddleEarth, 1000);
 
 
 // Part 2
@@ -64,7 +64,7 @@ function makeHobbits() {
 
 };
 
-makeHobbits();
+setTimeout(makeHobbits, 3000);
 
 // Part 3
 
@@ -87,7 +87,7 @@ function keepItSecretKeepItSafe() {
   oneRing.addEventListener('click', nazgulScreech);
 };
 
-keepItSecretKeepItSafe();
+setTimeout(keepItSecretKeepItSafe, 5000);
 
 // Part 4
 
@@ -109,7 +109,7 @@ function makeBuddies() {
   };
 };
 
-makeBuddies();
+setTimeout(makeBuddies, 7000);
 
 // Part 5
 
@@ -126,7 +126,7 @@ function beautifulStranger() {
   helloStranger.innerHTML = "Aragorn";
 };
 
-beautifulStranger();
+setTimeout(beautifulStranger, 9000);
 
 // Part 6
 
@@ -137,7 +137,7 @@ function leaveTheShire() {
   rivendell.appendChild(shire.querySelector("ul"))
 };
 
-// leaveTheShire()
+setTimeout(leaveTheShire, 11000);
 
 
 // Part 7
@@ -154,11 +154,11 @@ function forgeTheFellowShip() {
   var fellows = document.querySelectorAll("li");
     for (var i = 0; i < fellows.length; i++){
         document.getElementById("the-fellowship").appendChild(fellows[i]);
-        //alert(fellows[i].textContent + " has joined your party!")
+        alert(fellows[i].textContent + " has joined your party!")
     };
 };
 
-// forgeTheFellowShip();
+setTimeout(forgeTheFellowShip, 13000);
 
 
 // Part 8
@@ -181,7 +181,7 @@ function theBalrog() {
   helloGandalf.style.color = "white";
 };
 
-theBalrog();
+setTimeout(theBalrog, 15000);
 
 
 // Part 9
@@ -191,8 +191,8 @@ function hornOfGondor() {
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
-  // alert("The horn of Gondor has been blown!");
-  // alert("Boromir has been killed by the Uruk-hai!");
+  alert("The horn of Gondor has been blown!");
+  alert("Boromir has been killed by the Uruk-hai!");
   var byeBoromir;
   var getBoromir = document.querySelectorAll("li")
   for (var i = 0; i < getBoromir.length; i++) {
@@ -201,10 +201,10 @@ function hornOfGondor() {
       };
   };
   byeBoromir.style.textDecoration = "line-through";
-  setInterval(function(){byeBoromir.remove() }, 2000);
+  setTimeout(function(){byeBoromir.remove() }, 2000);
 };
 
-hornOfGondor();
+setTimeout(hornOfGondor, 17000);
 
 // Part 10
 
@@ -215,13 +215,13 @@ function itsDangerousToGoAlone(){
   mountDoom.setAttribute("id", "mount-doom");
   var mordor = document.querySelectorAll("article")[2];
   mordor.appendChild(mountDoom);
-  var goFrodo = document.querySelectorAll("li")[0];
-  var goSam = document.querySelectorAll("li")[1];
+  var goFrodo = document.querySelectorAll("li")[4];
   mordor.appendChild(goFrodo);
+  var goSam = document.querySelectorAll("li")[4];
   mordor.appendChild(goSam);
 };
 
-itsDangerousToGoAlone();
+setTimeout(itsDangerousToGoAlone, 22000);
 
 
 // Part 11
@@ -238,7 +238,7 @@ function weWantsIt() {
   gollum.appendChild(oneRing);
 };
 
-weWantsIt();
+setTimeout(weWantsIt, 24000);
 
 
 // Part 12
@@ -254,11 +254,15 @@ function thereAndBackAgain() {
   theyBeGone.appendChild(mountDoom);
   var mordor = document.querySelectorAll("article")[2];
   mordor.style.background = "none";
-  var goFrodo = document.querySelectorAll("li")[7];
-  var shire = document.querySelectorAll("ul")[0];
+  var shire = document.getElementsByTagName("article")[0];
+  var goMerry = document.querySelectorAll("li.hobbit")[0];
+  shire.appendChild(goMerry);
+  var goPippin = document.querySelectorAll("li.hobbit")[1];
+  shire.appendChild(goPippin);
+  var goFrodo = document.querySelectorAll("li.hobbit")[2];
   shire.appendChild(goFrodo);
-  var goSam = document.querySelectorAll("li")[8];
+  var goSam = document.querySelectorAll("li.hobbit")[3];
   shire.appendChild(goSam);
 };
 
-thereAndBackAgain();
+setTimeout(thereAndBackAgain, 26000);
