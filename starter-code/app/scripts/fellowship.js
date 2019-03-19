@@ -25,9 +25,23 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
+  var middleEarth = document.createElement("section");
+  middleEarth.setAttribute("id", "middle-earth");
+
   // add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
+  var section = document.querySelector('section');
+  for (var i = 0; i < lands.length; i++) {
+    var landsArticle = document.createElement("article");
+    middleEarth.appendChild(landsArticle);
+
+    // inside each article tag include an h1 with the name of the land
+    var landsH1 = document.createElement("h1");
+    landsArticle.appendChild(landsH1);
+    landsH1.textContent = lands[i];
+    //console.log(lands[i])
+  }
   // append middle-earth to your document body
+    document.body.appendChild(middleEarth);
 }
 
 makeMiddleEarth();
@@ -37,18 +51,46 @@ makeMiddleEarth();
 
 function makeHobbits() {
   // display an unordered list of hobbits in the shire (the article tag)
-  // give each hobbit a class of hobbit
+  // put ul in the shire tag
+  var shireTag = document.querySelector("article");
+  var hobbitUl = document.createElement("ul");
+  shireTag.appendChild(hobbitUl);
+
+
+  for (var i = 0; i < hobbits.length; i++) {
+    // put li in ul
+    var findHobbitUl = document.querySelector("ul");
+    var hobbitList = document.createElement("li");
+    findHobbitUl.appendChild(hobbitList);
+
+    // give each hobbit a class of hobbit
+    // put hobbits in li
+    var hobbitName = hobbits[i];
+    hobbitList.classList.add("hobbit");
+    hobbitList.textContent = hobbitName;
+  }
 }
+
+makeHobbits();
+
 
 
 // Part 3
 
 function keepItSecretKeepItSafe() {
   // create a div with an id of 'the-ring'
+  var ring = document.createElement("div");
+  ring.setAttribute("id", "ring");
   // give the div a class of 'magic-imbued-jewelry'
+  ring.classList.add("magic-imbued-jewelry");
   // add the ring as a child of Frodo
+  var frodo = document.querySelector("li");
+  frodo.appendChild(ring);
   // Bonus: add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  document.addEventListener("click", nazgulScreech);
 }
+keepItSecretKeepItSafe();
+
 
 
 // Part 4
@@ -56,17 +98,39 @@ function keepItSecretKeepItSafe() {
 
 function makeBuddies() {
   // create an aside tag
+  var aside = document.createElement("aside");
   // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
-}
+  var buddiesUl = document.createElement("ul");
+  aside.appendChild(buddiesUl);
+  for (var i = 0; i < buddies.length; i++) {
+    var buddiesList = document.createElement("li");
+    buddiesUl.appendChild(buddiesList);
 
+    var buddiesName = buddies[i];
+    buddiesList.textContent = buddiesName;
+  }
+  // insert your aside as a child element of rivendell
+  var rivendell = document.querySelectorAll("article")[1];
+  rivendell.appendChild(aside);
+
+}
+makeBuddies();
 
 // Part 5
 
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
+  var li = document.querySelectorAll("li");
+  //var strider = li[7];
+  for (var i = 0; i < li.length; i++) {
+    if (li[i].textContent === "Strider") {
+        li[i].textContent = "Aragorn";
+    }
+  }
 }
+
+beautifulStranger();
 
 
 // Part 6
@@ -130,3 +194,5 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+
+console.log(document.body);
