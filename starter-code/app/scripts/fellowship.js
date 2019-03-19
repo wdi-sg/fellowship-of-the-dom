@@ -215,6 +215,10 @@ function itsDangerousToGoAlone(){
   mountDoom.setAttribute("id", "mount-doom");
   var mordor = document.querySelectorAll("article")[2];
   mordor.appendChild(mountDoom);
+  var goFrodo = document.querySelectorAll("li")[0];
+  var goSam = document.querySelectorAll("li")[1];
+  mordor.appendChild(goFrodo);
+  mordor.appendChild(goSam);
 };
 
 itsDangerousToGoAlone();
@@ -226,7 +230,15 @@ function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-}
+  var mordor = document.querySelectorAll("article")[2];
+  var gollum = document.createElement("div");
+  gollum.setAttribute("id", "gollum");
+  mordor.appendChild(gollum);
+  var oneRing = document.getElementById("the-ring");
+  gollum.appendChild(oneRing);
+};
+
+weWantsIt();
 
 
 // Part 12
@@ -235,4 +247,18 @@ function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
-}
+  var gollum = document.getElementById("gollum");
+  var mountDoom = document.getElementById("mount-doom");
+  var theyBeGone = document.createElement("div");
+  theyBeGone.appendChild(gollum);
+  theyBeGone.appendChild(mountDoom);
+  var mordor = document.querySelectorAll("article")[2];
+  mordor.style.background = "none";
+  var goFrodo = document.querySelectorAll("li")[7];
+  var shire = document.querySelectorAll("ul")[0];
+  shire.appendChild(goFrodo);
+  var goSam = document.querySelectorAll("li")[8];
+  shire.appendChild(goSam);
+};
+
+thereAndBackAgain();
